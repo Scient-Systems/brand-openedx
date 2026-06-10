@@ -18,43 +18,64 @@
         "$description": "Primary color of level 100."
       },
       "base": {
-        "$value": "#15376D",
+        "$value": "#1D2B50",
         "source": "$primary",
-        "$description": "Basic primary color."
+        "$description": "Basic primary color — Night Quest ink (logo border navy)."
       },
       "light": {
-        "$value": "#F2F7F8",
+        "$value": "#EEF2FA",
         "source": "$primary-light",
-        "$description": "Light primary color."
+        "$description": "Light primary color — soft ink wash."
+      }
+    },
+    "brand": {
+      "base": {
+        "$value": "#2B5FD0",
+        "source": "$brand",
+        "$description": "Brand color — deep quest-blue (AA-safe with white text)."
+      }
+    },
+    "info": {
+      "base": {
+        "$value": "#2B5FD0",
+        "source": "$info",
+        "$description": "Info color — deep quest-blue."
       }
     },
     "text": {
       "base": {
-        "$value": "#111827",
+        "$value": "#1D2B50",
         "source": "$text-color",
-        "$description": "Text base color."
+        "$description": "Text base color — ink."
       },
       "light": {
-        "$value": "#515661",
+        "$value": "#5C6A8C",
         "source": "$text-color-light",
-        "$description": "Text light color."
+        "$description": "Text light color — ink-soft."
       },
       "footer": {
-        "$value": "#374151",
+        "$value": "#8E9BBF",
         "source": "$light-dark",
-        "$description": "Footer text color."
+        "$description": "Footer text color — star-dim (footer is night in Night Quest)."
       },
       "primary": {
-        "$value": "#515661",
+        "$value": "#5C6A8C",
         "source": "$text-color-primary",
-        "$description": "Text primary color."
+        "$description": "Text primary color — ink-soft."
+      }
+    },
+    "body": {
+      "bg": {
+        "$value": "#FBF5EA",
+        "source": "$body-bg",
+        "$description": "Body background — Night Quest paper."
       }
     }
   },
   "course": {
     "card": {
       "shadow": {
-        "$value": "0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 4px 6px -2px rgba(0, 0, 0, 0.15), 0px 10px 15px -3px rgba(0, 0, 0, 0.15)",
+        "$value": "0px 1px 0px 0px rgba(29, 43, 80, 0.06), 0px 10px 30px 0px rgba(29, 43, 80, 0.1)",
         "$type": "shadow",
         "source": "$course-card-shadow"
       }

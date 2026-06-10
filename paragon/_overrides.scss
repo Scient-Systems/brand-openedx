@@ -1,10 +1,57 @@
 // Use this file to define style overrides for @edx/paragon
 // This file is included after all Paragon styles, but should generally avoid using private mixins in Paragon.
-body, .text-monospace, * {
-    font-family: 'Inter', sans-serif !important;
+body, * {
+    font-family: 'Karla', sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4 {
+    font-family: 'Fredoka', sans-serif !important;
+}
+.text-monospace, code, pre, kbd, samp {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+// Night Quest shape language: pill buttons
+.btn {
+    border-radius: 50rem !important;
+}
+// keep grouped/segmented buttons rectangular so they still join up
+.btn-group > .btn,
+.pgn__form-control-decorator-group .btn,
+.input-group .btn {
+    border-radius: 0.375rem !important;
+}
+::selection {
+    background: #FFC83D;
+    color: #1D2B50;
+}
+// Launch CTAs: brand buttons (Resume course, Enroll, Sign in) are the
+// quest-yellow launch button in both variants — ink text, soft glow, lift.
+.btn-brand, .btn-primary.btn-brand {
+    background-color: #FFC83D !important;
+    border-color: #FFC83D !important;
+    color: #0B1530 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 18px rgba(255, 200, 61, 0.3);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    &:hover, &:focus {
+        background-color: #FFC83D !important;
+        color: #0B1530 !important;
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(255, 200, 61, 0.4);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .btn-brand, .btn-primary.btn-brand {
+        transition: none;
+        &:hover, &:focus {
+            transform: none;
+        }
+    }
 }
 html {
     width: 100%;

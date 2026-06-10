@@ -8,7 +8,7 @@
           "source": "$alert-info-bg"
         },
         "danger": {
-          "value": "#333",
+          "value": "#351822",
           "$type": "color",
           "source": "$alert-danger-bg"
         }

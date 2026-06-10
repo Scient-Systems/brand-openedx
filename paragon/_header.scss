@@ -499,6 +499,107 @@
 [dir="ltr"] #root .user-dropdown .dropdown-menu {
     top: 54px;
 }
+
+// ── Night Quest chrome ────────────────────────────────────────────────────
+// Headers become a navy band with a static CSS starfield (no animation).
+// Colors only — layout rules above stay untouched. Studio/authoring header
+// is deliberately excluded (tool-dense surface, keeps default styling).
+#root {
+    header.site-header-desktop,
+    header.site-header-mobile,
+    header.customise.learning-header {
+        background-color: #0B1530;
+        background-image:
+            radial-gradient(1.2px 1.2px at 22px 34px, rgba(255, 255, 255, 0.75) 50%, transparent 51%),
+            radial-gradient(1px 1px at 110px 14px, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
+            radial-gradient(1.4px 1.4px at 182px 52px, rgba(255, 255, 255, 0.85) 50%, transparent 51%),
+            radial-gradient(1px 1px at 62px 64px, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
+            radial-gradient(1.1px 1.1px at 250px 28px, rgba(255, 255, 255, 0.6) 50%, transparent 51%);
+        background-size: 290px 80px;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    }
+    header.site-header-desktop {
+        .main-nav a.nav-link {
+            font-family: 'Fredoka', sans-serif !important;
+            color: #8E9BBF;
+            &:hover, &.active {
+                color: #EEF2FB;
+                border-bottom-color: #FFC83D;
+            }
+        }
+        .secondary-menu-container {
+            .nav-link, .nav-link:hover, .nav-link:focus, .nav-link.active, .expanded .nav-link {
+                color: #9DBCF7;
+            }
+        }
+        .menu button {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #EEF2FB;
+            border-radius: 50rem;
+        }
+    }
+    header.site-header-mobile .menu button {
+        color: #EEF2FB;
+        .hamburger-menu .line {
+            background: #EEF2FB;
+        }
+    }
+    header.customise.learning-header {
+        .course-title-lockup {
+            .nav-course a {
+                font-family: 'Fredoka', sans-serif !important;
+                color: #8E9BBF;
+                &.active, &:hover {
+                    color: #EEF2FB;
+                    border-bottom-color: #FFC83D;
+                }
+            }
+            .course-info-header {
+                .title {
+                    color: #EEF2FB;
+                }
+                .org {
+                    color: #8E9BBF;
+                }
+            }
+        }
+    }
+    .user-dropdown button {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #EEF2FB;
+        border-radius: 50rem;
+        &:after {
+            border-color: #EEF2FB !important;
+        }
+        .hamburger-menu .line {
+            background: #EEF2FB;
+        }
+    }
+    .learner-variant-header {
+        &:after {
+            background-color: #0B1530;
+            background-image:
+                radial-gradient(1.2px 1.2px at 22px 34px, rgba(255, 255, 255, 0.75) 50%, transparent 51%),
+                radial-gradient(1px 1px at 110px 14px, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
+                radial-gradient(1.4px 1.4px at 182px 52px, rgba(255, 255, 255, 0.85) 50%, transparent 51%),
+                radial-gradient(1px 1px at 62px 64px, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
+                radial-gradient(1.1px 1.1px at 250px 28px, rgba(255, 255, 255, 0.6) 50%, transparent 51%);
+            background-size: 290px 80px;
+            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.08);
+        }
+        .btn.btn-inverse-primary {
+            font-family: 'Fredoka', sans-serif !important;
+            color: #8E9BBF;
+            &.course-link, &:hover {
+                color: #EEF2FB;
+                border-bottom-color: #FFC83D !important;
+            }
+        }
+        .btn-icon.btn-icon-inverse-primary {
+            color: #8E9BBF;
+        }
+    }
+}
 #root {
     .nav-small-menu {
         border-bottom: 2px solid var(--pgn-color-primary-base) !important;

@@ -1,7 +1,8 @@
-// footer style
+// footer style — Night Quest: deepest night band in both theme variants
 .wrapper-footer {
     padding: 25px 0;
-    border-top: 1px solid #E5E7EB;
+    border-top: none;
+    background: #070D20;
     @media (--pgn-size-breakpoint-min-width-md) {
         padding: 45px 0;
     }
@@ -44,7 +45,7 @@ footer.tutor-container {
             position: relative;
             font-size: 12px;
             line-height: 18px;
-            color: var(--pgn-color-text-primary);
+            color: #8E9BBF;
             &:first-child {
                 padding-left: 0;
             }
@@ -58,7 +59,7 @@ footer.tutor-container {
                     width: 1px;
                     height: 29px;
                     margin: -14px 0 0;
-                    background: var(--pgn-color-text-primary);;
+                    background: rgba(255, 255, 255, 0.15);
                 }
             }
         }
@@ -83,9 +84,10 @@ footer.tutor-container {
                     line-height: 24px;
                 }
                 a {
-                    color: var(--pgn-color-text-footer);
+                    color: #8E9BBF;
                     text-decoration: none;
                     &:hover {
+                        color: #EEF2FB;
                         text-decoration: none;
                     }
                 }
@@ -96,7 +98,7 @@ footer.tutor-container {
         display: block;
         font-size: 12px;
         line-height: 16px;
-        color: var(--pgn-color-text-footer);
+        color: #8E9BBF;
     }
 }
 .pgn__pageBanner__accentA {
