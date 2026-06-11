@@ -25,7 +25,7 @@
         "actions": {
           "default": "{color.primary.100}"
         },
-        "$value": "#A8C7FF",
+        "$value": "#BCABFF",
         "$description": "Primary color of level 100."
       },
       "500": {
@@ -37,7 +37,7 @@
         "$description": "Primary color of level 500."
       },
       "base": {
-        "$value": "#6FA8FF",
+        "$value": "#9F8BFF",
         "source": "$primary",
         "actions": {
           "default": "{color.primary.base}"
@@ -71,7 +71,7 @@
     },
     "brand": {
       "base": {
-        "$value": "#F4602A",
+        "$value": "#A9BC3F",
         "source": "$brand",
         "actions": {
           "default": "{color.brand.base}"
@@ -181,7 +181,7 @@
         "$description": "Success color of level 500."
       },
       "base": {
-        "$value": "#5BD392",
+        "$value": "#45C48A",
         "source": "$success",
         "actions": {
           "default": "{color.success.base}"

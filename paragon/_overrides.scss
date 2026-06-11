@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6,
 // launch button in both variants — ink text (never white), inner top
 // highlight, ember glow, lift on hover.
 .btn-brand, .btn-primary.btn-brand {
-    background: linear-gradient(180deg, #FF8A57, #F4602A) !important;
+    background: #8CA12C !important;
     border-color: transparent !important;
     color: #101A33 !important;
     font-weight: 700;
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6,
         0 10px 28px -8px rgba(244, 96, 42, 0.45);
     transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
     &:hover, &:focus {
-        background: linear-gradient(180deg, #FF8A57, #F4602A) !important;
+        background: #8CA12C !important;
         color: #101A33 !important;
         filter: brightness(1.04) saturate(1.08);
         transform: translateY(-1px);
@@ -497,6 +497,7 @@ body {
 @import "./profile";
 @import "./dates";
 @import "./extras";
+@import "./dashboard";
 
 
 // Including dark theme

@@ -86,8 +86,8 @@
                     font-size: 34px;
                     line-height: 40px;
                     // ember gradient glint (color fallback first)
-                    color: #FF8A57 !important;
-                    background: linear-gradient(94deg, #FFB08A 0%, #F4602A 55%, #FF8A57 100%);
+                    color: #C6D465 !important;
+                    background: #A9BC3F;
                     -webkit-background-clip: text;
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
@@ -173,7 +173,7 @@
                 }
                 .btn-brand {
                     // The ember launch button: copper gradient, ink text, both variants
-                    background: linear-gradient(180deg, #FF8A57, #F4602A) !important;
+                    background: #8CA12C !important;
                     border-color: transparent !important;
                     color: #101A33 !important;
                     font-size: 14px;

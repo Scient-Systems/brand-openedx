@@ -526,12 +526,12 @@
             color: #8E9CC0;
             &:hover, &.active {
                 color: #E9EEFA;
-                border-bottom-color: #6FA8FF;
+                border-bottom-color: #9F8BFF;
             }
         }
         .secondary-menu-container {
             .nav-link, .nav-link:hover, .nav-link:focus, .nav-link.active, .expanded .nav-link {
-                color: #6FA8FF;
+                color: #9F8BFF;
             }
         }
         .menu button {
@@ -553,7 +553,7 @@
                 color: #8E9CC0;
                 &.active, &:hover {
                     color: #E9EEFA;
-                    border-bottom-color: #6FA8FF;
+                    border-bottom-color: #9F8BFF;
                 }
             }
             .course-info-header {
@@ -596,7 +596,7 @@
             color: #8E9CC0;
             &.course-link, &:hover {
                 color: #E9EEFA;
-                border-bottom-color: #6FA8FF !important;
+                border-bottom-color: #9F8BFF !important;
             }
         }
         .btn-icon.btn-icon-inverse-primary {
