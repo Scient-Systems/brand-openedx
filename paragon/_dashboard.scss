@@ -518,7 +518,10 @@
         }
     }
 
-    @media (--pgn-size-breakpoint-min-width-md) {
+    // Plain px query on purpose: --pgn custom media is NOT compiled out of the
+    // dist CSS this repo ships (browsers drop those blocks). 768px = paragon md,
+    // matching the MFE's isCollapsed switch to the vertical card.
+    @media (min-width: 768px) {
         .course-card {
             .pgn__card-wrapper-image-cap.horizontal {
                 width: 76px;
@@ -915,7 +918,7 @@
 // Responsive
 // ---------------------------------------------------------------------------
 
-@media (--pgn-size-breakpoint-max-width-md) {
+@media (max-width: 767.98px) {
     #dashboard-container {
         .sqa-stats {
             grid-template-columns: 1fr;
