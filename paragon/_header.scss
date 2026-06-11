@@ -500,7 +500,7 @@
     top: 54px;
 }
 
-// ── Night Quest chrome ────────────────────────────────────────────────────
+// ── Meridian chrome ────────────────────────────────────────────────────
 // Headers become a navy band with a static CSS starfield (no animation).
 // Colors only — layout rules above stay untouched. Studio/authoring header
 // is deliberately excluded (tool-dense surface, keeps default styling).
@@ -508,95 +508,99 @@
     header.site-header-desktop,
     header.site-header-mobile,
     header.customise.learning-header {
-        background-color: #0B1530;
+        background-color: #0A1226;
         background-image:
-            radial-gradient(1.2px 1.2px at 22px 34px, rgba(255, 255, 255, 0.75) 50%, transparent 51%),
-            radial-gradient(1px 1px at 110px 14px, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
-            radial-gradient(1.4px 1.4px at 182px 52px, rgba(255, 255, 255, 0.85) 50%, transparent 51%),
-            radial-gradient(1px 1px at 62px 64px, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
-            radial-gradient(1.1px 1.1px at 250px 28px, rgba(255, 255, 255, 0.6) 50%, transparent 51%);
-        background-size: 290px 80px;
-        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.08);
+            radial-gradient(700px 150px at 8% -50%, rgba(47, 93, 217, 0.3), transparent 65%),
+            radial-gradient(560px 130px at 96% 150%, rgba(244, 96, 42, 0.1), transparent 65%),
+            radial-gradient(1px 1px at 22px 34px, rgba(233, 238, 250, 0.55) 50%, transparent 51%),
+            radial-gradient(0.9px 0.9px at 110px 14px, rgba(233, 238, 250, 0.35) 50%, transparent 51%),
+            radial-gradient(1.2px 1.2px at 182px 52px, rgba(233, 238, 250, 0.65) 50%, transparent 51%),
+            radial-gradient(0.9px 0.9px at 62px 64px, rgba(233, 238, 250, 0.3) 50%, transparent 51%);
+        background-repeat: no-repeat, no-repeat, repeat, repeat, repeat, repeat;
+        background-size: 100% 100%, 100% 100%, 290px 80px, 290px 80px, 290px 80px, 290px 80px;
+        box-shadow: 0 1px 0 0 rgba(151, 170, 215, 0.14);
     }
     header.site-header-desktop {
         .main-nav a.nav-link {
-            font-family: 'Fredoka', sans-serif !important;
-            color: #8E9BBF;
+            font-family: 'Sora', sans-serif !important;
+            color: #8E9CC0;
             &:hover, &.active {
-                color: #EEF2FB;
-                border-bottom-color: #FFC83D;
+                color: #E9EEFA;
+                border-bottom-color: #6FA8FF;
             }
         }
         .secondary-menu-container {
             .nav-link, .nav-link:hover, .nav-link:focus, .nav-link.active, .expanded .nav-link {
-                color: #9DBCF7;
+                color: #6FA8FF;
             }
         }
         .menu button {
             background: rgba(255, 255, 255, 0.1) !important;
-            color: #EEF2FB;
+            color: #E9EEFA;
             border-radius: 50rem;
         }
     }
     header.site-header-mobile .menu button {
-        color: #EEF2FB;
+        color: #E9EEFA;
         .hamburger-menu .line {
-            background: #EEF2FB;
+            background: #E9EEFA;
         }
     }
     header.customise.learning-header {
         .course-title-lockup {
             .nav-course a {
-                font-family: 'Fredoka', sans-serif !important;
-                color: #8E9BBF;
+                font-family: 'Sora', sans-serif !important;
+                color: #8E9CC0;
                 &.active, &:hover {
-                    color: #EEF2FB;
-                    border-bottom-color: #FFC83D;
+                    color: #E9EEFA;
+                    border-bottom-color: #6FA8FF;
                 }
             }
             .course-info-header {
                 .title {
-                    color: #EEF2FB;
+                    color: #E9EEFA;
                 }
                 .org {
-                    color: #8E9BBF;
+                    color: #8E9CC0;
                 }
             }
         }
     }
     .user-dropdown button {
         background: rgba(255, 255, 255, 0.1) !important;
-        color: #EEF2FB;
+        color: #E9EEFA;
         border-radius: 50rem;
         &:after {
-            border-color: #EEF2FB !important;
+            border-color: #E9EEFA !important;
         }
         .hamburger-menu .line {
-            background: #EEF2FB;
+            background: #E9EEFA;
         }
     }
     .learner-variant-header {
         &:after {
-            background-color: #0B1530;
+            background-color: #0A1226;
             background-image:
-                radial-gradient(1.2px 1.2px at 22px 34px, rgba(255, 255, 255, 0.75) 50%, transparent 51%),
-                radial-gradient(1px 1px at 110px 14px, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
-                radial-gradient(1.4px 1.4px at 182px 52px, rgba(255, 255, 255, 0.85) 50%, transparent 51%),
-                radial-gradient(1px 1px at 62px 64px, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
-                radial-gradient(1.1px 1.1px at 250px 28px, rgba(255, 255, 255, 0.6) 50%, transparent 51%);
-            background-size: 290px 80px;
-            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.08);
+                radial-gradient(700px 150px at 8% -50%, rgba(47, 93, 217, 0.3), transparent 65%),
+                radial-gradient(560px 130px at 96% 150%, rgba(244, 96, 42, 0.1), transparent 65%),
+                radial-gradient(1px 1px at 22px 34px, rgba(233, 238, 250, 0.55) 50%, transparent 51%),
+                radial-gradient(0.9px 0.9px at 110px 14px, rgba(233, 238, 250, 0.35) 50%, transparent 51%),
+                radial-gradient(1.2px 1.2px at 182px 52px, rgba(233, 238, 250, 0.65) 50%, transparent 51%),
+                radial-gradient(0.9px 0.9px at 62px 64px, rgba(233, 238, 250, 0.3) 50%, transparent 51%);
+            background-repeat: no-repeat, no-repeat, repeat, repeat, repeat, repeat;
+            background-size: 100% 100%, 100% 100%, 290px 80px, 290px 80px, 290px 80px, 290px 80px;
+            box-shadow: 0 1px 0 0 rgba(151, 170, 215, 0.14);
         }
         .btn.btn-inverse-primary {
-            font-family: 'Fredoka', sans-serif !important;
-            color: #8E9BBF;
+            font-family: 'Sora', sans-serif !important;
+            color: #8E9CC0;
             &.course-link, &:hover {
-                color: #EEF2FB;
-                border-bottom-color: #FFC83D !important;
+                color: #E9EEFA;
+                border-bottom-color: #6FA8FF !important;
             }
         }
         .btn-icon.btn-icon-inverse-primary {
-            color: #8E9BBF;
+            color: #8E9CC0;
         }
     }
 }

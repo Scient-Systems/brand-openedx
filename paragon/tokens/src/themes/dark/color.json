@@ -3,7 +3,7 @@
   "color": {
     "light": {
       "base": {
-        "$value": "#2E3D6E",
+        "$value": "#26345E",
         "source": "$primary",
         "actions": {
           "default": "{color.light.base}"
@@ -25,7 +25,7 @@
         "actions": {
           "default": "{color.primary.100}"
         },
-        "$value": "#8FA8DC",
+        "$value": "#A8C7FF",
         "$description": "Primary color of level 100."
       },
       "500": {
@@ -33,11 +33,11 @@
         "actions": {
           "default": "{color.primary.500}"
         },
-        "$value": "#4B5E94",
+        "$value": "#3D5586",
         "$description": "Primary color of level 500."
       },
       "base": {
-        "$value": "#9DBCF7",
+        "$value": "#6FA8FF",
         "source": "$primary",
         "actions": {
           "default": "{color.primary.base}"
@@ -49,11 +49,11 @@
         "actions": {
           "default": "{color.primary.700}"
         },
-        "$value": "#36477B",
+        "$value": "#2A3A69",
         "$description": "Primary color of level 700."
       },
       "light": {
-        "$value": "#16224A",
+        "$value": "#18254A",
         "source": "$primary-light",
         "actions": {
           "default": "{color.primary.light}"
@@ -61,7 +61,7 @@
         "$description": "Light primary color, dark theme."
       },
       "border": {
-        "$value": "#2E3D6E",
+        "$value": "#26345E",
         "source": "$primary-border",
         "actions": {
           "default": "{color.primary.border}"
@@ -71,17 +71,17 @@
     },
     "brand": {
       "base": {
-        "$value": "#FFC83D",
+        "$value": "#F4602A",
         "source": "$brand",
         "actions": {
           "default": "{color.brand.base}"
         },
-        "$description": "Brand color, dark theme \u2014 quest-yellow launch CTAs on night."
+        "$description": "Brand color, dark theme \u2014 Meridian ember CTAs on night (ink text)."
       }
     },
     "text": {
       "base": {
-        "$value": "#EEF2FB",
+        "$value": "#E9EEFA",
         "source": "$text-color",
         "actions": {
           "default": "{color.text.base}"
@@ -97,7 +97,7 @@
         "$description": "Footer text color, dark theme."
       },
       "primary": {
-        "$value": "#C7D2EC",
+        "$value": "#C2CDE8",
         "source": "$text-primary",
         "actions": {
           "default": "{color.text.primary}"
@@ -105,7 +105,7 @@
         "$description": "Text primary color, dark theme."
       },
       "button": {
-        "$value": "#0B1530",
+        "$value": "#0A1226",
         "source": "$btn-color",
         "actions": {
           "default": "{color.text.button}"
@@ -120,7 +120,7 @@
         "source": "$btn-info-hover-bg"
       },
       "light-overlay": {
-        "$value": "#111E42",
+        "$value": "#101B38",
         "source": "$bg-light-overlay",
         "actions": {
           "default": "{color.bg.light-overlay}"
@@ -128,7 +128,7 @@
         "$description": "Light background overlay color, dark theme."
       },
       "hover": {
-        "$value": "#16224A",
+        "$value": "#18254A",
         "source": "$bg-hover",
         "actions": {
           "default": "{color.bg.hover}"
@@ -138,12 +138,12 @@
     },
     "body": {
       "bg": {
-        "$value": "#0B1530",
+        "$value": "#0A1226",
         "source": "$body-bg",
         "actions": {
           "default": "{color.body.bg}"
         },
-        "$description": "Body background, dark theme \u2014 night-900."
+        "$description": "Body background, dark theme \u2014 Meridian midnight."
       },
       "base": {
         "$value": "{color.text.base}",
@@ -153,12 +153,12 @@
     },
     "header": {
       "bg": {
-        "$value": "#070D20",
+        "$value": "#060B1A",
         "source": "$body-bg",
         "actions": {
           "default": "{color.body.bg}"
         },
-        "$description": "Header background, dark theme \u2014 night-950."
+        "$description": "Header background, dark theme \u2014 Meridian abyss."
       }
     },
     "accent": {
@@ -177,11 +177,11 @@
         "actions": {
           "default": "{color.success.500}"
         },
-        "$value": "#2E8C4F",
+        "$value": "#1F8A4C",
         "$description": "Success color of level 500."
       },
       "base": {
-        "$value": "#5FD37A",
+        "$value": "#5BD392",
         "source": "$success",
         "actions": {
           "default": "{color.success.base}"
@@ -191,7 +191,7 @@
     },
     "danger": {
       "base": {
-        "$value": "#FF9C8F",
+        "$value": "#FF8E7A",
         "source": "$danger",
         "actions": {
           "default": "{color.danger.base}"
@@ -213,7 +213,7 @@
         "actions": {
           "default": "{color.gray.200}"
         },
-        "$value": "#C7D2EC",
+        "$value": "#C2CDE8",
         "$description": "Gray color of level 200."
       },
       "500": {
@@ -221,7 +221,7 @@
         "actions": {
           "default": "{color.gray.500}"
         },
-        "$value": "#8E9BBF",
+        "$value": "#8E9CC0",
         "$description": "Gray color of level 500."
       }
     },

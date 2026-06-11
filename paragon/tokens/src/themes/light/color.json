@@ -18,12 +18,12 @@
         "$description": "Primary color of level 100."
       },
       "base": {
-        "$value": "#1D2B50",
+        "$value": "#101A33",
         "source": "$primary",
-        "$description": "Basic primary color — Night Quest ink (logo border navy)."
+        "$description": "Basic primary color — Meridian ink (deep navy)."
       },
       "light": {
-        "$value": "#EEF2FA",
+        "$value": "#E8EFFC",
         "source": "$primary-light",
         "$description": "Light primary color — soft ink wash."
       }
@@ -32,50 +32,50 @@
       "base": {
         "$value": "#2B5FD0",
         "source": "$brand",
-        "$description": "Brand color — deep quest-blue (AA-safe with white text)."
+        "$description": "Brand color — Meridian sky blue (AA-safe with white text)."
       }
     },
     "info": {
       "base": {
         "$value": "#2B5FD0",
         "source": "$info",
-        "$description": "Info color — deep quest-blue."
+        "$description": "Info color — Meridian sky blue."
       }
     },
     "text": {
       "base": {
-        "$value": "#1D2B50",
+        "$value": "#101A33",
         "source": "$text-color",
         "$description": "Text base color — ink."
       },
       "light": {
-        "$value": "#5C6A8C",
+        "$value": "#4F5E7E",
         "source": "$text-color-light",
         "$description": "Text light color — ink-soft."
       },
       "footer": {
-        "$value": "#8E9BBF",
+        "$value": "#8E9CC0",
         "source": "$light-dark",
-        "$description": "Footer text color — star-dim (footer is night in Night Quest)."
+        "$description": "Footer text color — moon-dim (footer is night chrome)."
       },
       "primary": {
-        "$value": "#5C6A8C",
+        "$value": "#4F5E7E",
         "source": "$text-color-primary",
         "$description": "Text primary color — ink-soft."
       }
     },
     "body": {
       "bg": {
-        "$value": "#FBF5EA",
+        "$value": "#F1F5FA",
         "source": "$body-bg",
-        "$description": "Body background — Night Quest paper."
+        "$description": "Body background — Meridian frost."
       }
     }
   },
   "course": {
     "card": {
       "shadow": {
-        "$value": "0px 1px 0px 0px rgba(29, 43, 80, 0.06), 0px 10px 30px 0px rgba(29, 43, 80, 0.1)",
+        "$value": "0px 1px 2px 0px rgba(16, 26, 51, 0.04), 0px 16px 40px -12px rgba(16, 26, 51, 0.14)",
         "$type": "shadow",
         "source": "$course-card-shadow"
       }

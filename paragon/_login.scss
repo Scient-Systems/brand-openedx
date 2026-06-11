@@ -5,15 +5,17 @@
     }
     .layout {
         min-height: 100vh;
-        // Night Quest cosmic hero: deep night + static starfield
-        background-color: #0B1530;
+        // Meridian cosmic hero: deep night + static starfield
+        background-color: #0A1226;
         background-image:
-            radial-gradient(1.3px 1.3px at 30px 40px, rgba(255, 255, 255, 0.8) 50%, transparent 51%),
-            radial-gradient(1px 1px at 130px 90px, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
-            radial-gradient(1.5px 1.5px at 210px 30px, rgba(255, 255, 255, 0.9) 50%, transparent 51%),
-            radial-gradient(1px 1px at 70px 140px, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
-            radial-gradient(1.2px 1.2px at 280px 110px, rgba(255, 255, 255, 0.65) 50%, transparent 51%);
-        background-size: 330px 180px;
+            radial-gradient(1100px 700px at -8% -20%, rgba(47, 93, 217, 0.2), transparent 60%),
+            radial-gradient(900px 600px at 108% 115%, rgba(244, 96, 42, 0.08), transparent 62%),
+            radial-gradient(1.1px 1.1px at 30px 40px, rgba(233, 238, 250, 0.6) 50%, transparent 51%),
+            radial-gradient(0.9px 0.9px at 130px 90px, rgba(233, 238, 250, 0.4) 50%, transparent 51%),
+            radial-gradient(1.3px 1.3px at 210px 30px, rgba(233, 238, 250, 0.7) 50%, transparent 51%),
+            radial-gradient(0.9px 0.9px at 70px 140px, rgba(233, 238, 250, 0.3) 50%, transparent 51%);
+        background-repeat: no-repeat, no-repeat, repeat, repeat, repeat, repeat;
+        background-size: 100% 100%, 100% 100%, 330px 180px, 330px 180px, 330px 180px, 330px 180px;
         padding: 20px;
         overflow: hidden;
         position: relative;
@@ -29,7 +31,7 @@
             width: 400px;
             height: 400px;
             border-radius: 50%;
-            box-shadow: 400px -400px 143px 90px rgba(59, 123, 232, 0.22);
+            box-shadow: 400px -400px 143px 90px rgba(111, 168, 255, 0.22);
             display: none;
             @media (--pgn-size-breakpoint-min-width-sm) {
                 display: block;
@@ -40,7 +42,7 @@
             top: -400px;
             left: auto;
             bottom: auto;
-            box-shadow: 400px 400px 143px 90px rgba(255, 200, 61, 0.14);
+            box-shadow: 400px 400px 143px 90px rgba(244, 96, 42, 0.14);
         }
         .col-md-3.bg-white {
             display: none;
@@ -66,8 +68,8 @@
                 max-width: 564px !important;
                 font-size: 32px;
                 line-height: 40px;
-                font-family: 'Fredoka', sans-serif !important;
-                color: #EEF2FB !important;
+                font-family: 'Sora', sans-serif !important;
+                color: #E9EEFA !important;
                 padding: 50px 0;
                 position: relative;
                 z-index: 1;
@@ -83,9 +85,14 @@
                 .text-accent-a {
                     font-size: 34px;
                     line-height: 40px;
-                    color: #FFC83D !important;
+                    // ember gradient glint (color fallback first)
+                    color: #FF8A57 !important;
+                    background: linear-gradient(94deg, #FFB08A 0%, #F4602A 55%, #FF8A57 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
                     display: block !important;
-                    font-weight: 600;
+                    font-weight: 700;
                     @media (--pgn-size-breakpoint-min-width-sm) {
                         font-size: 64px;
                         line-height: 74px;
@@ -95,9 +102,10 @@
         }
         .content {
             background: var(--pgn-color-body-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08); // visible card edge in dark variant
+            border: 1px solid rgba(151, 170, 215, 0.14);
+            border-top-color: rgba(190, 212, 255, 0.3); // lit top edge
             box-shadow: 0 24px 60px rgba(2, 5, 16, 0.45);
-            border-radius: 20px 0px;
+            border-radius: 24px;
             padding: 20px;
             margin: 0;
             position: relative;
@@ -105,7 +113,7 @@
             display: block;
             @media (--pgn-size-breakpoint-min-width-sm) {
                 padding: 50px;
-                border-radius: 50px 0px;
+                border-radius: 24px;
             }
             @media screen and (max-width: 1200px) {
                 margin: 0 auto;
@@ -164,16 +172,21 @@
                     font-size: 14px;
                 }
                 .btn-brand {
-                    // The launch button: quest-yellow with ink text, both variants
-                    background-color: #FFC83D !important;
-                    border-color: #FFC83D !important;
-                    color: #0B1530 !important;
+                    // The ember launch button: copper gradient, ink text, both variants
+                    background: linear-gradient(180deg, #FF8A57, #F4602A) !important;
+                    border-color: transparent !important;
+                    color: #101A33 !important;
                     font-size: 14px;
                     font-weight: 700;
                     line-height: 30px;
-                    box-shadow: 0 4px 18px rgba(255, 200, 61, 0.35);
+                    box-shadow:
+                        inset 0 1px 0 rgba(255, 255, 255, 0.32),
+                        0 10px 28px -8px rgba(244, 96, 42, 0.45);
                     &:hover {
-                        filter: brightness(1.05);
+                        filter: brightness(1.04) saturate(1.08);
+                        box-shadow:
+                            inset 0 1px 0 rgba(255, 255, 255, 0.32),
+                            0 14px 32px -8px rgba(244, 96, 42, 0.55);
                     }
                 }
             }
