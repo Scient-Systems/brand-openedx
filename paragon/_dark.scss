@@ -15,7 +15,17 @@
 
     color: var(--pgn-color-text-base) !important;
     background: var(--pgn-color-body-bg) !important;
+    // Without this, browsers paint native widgets (select popups, checkboxes,
+    // date pickers, scrollbars) with light UA colors while option text inherits
+    // the near-white theme color — white-on-white dropdowns.
+    color-scheme: dark;
     * {
         accent-color: var(--pgn-color-primary-base);
+    }
+    // Fallback for browsers that style <option> directly instead of (or in
+    // addition to) honoring color-scheme on the popup.
+    select option, select optgroup {
+        background-color: var(--pgn-color-body-bg);
+        color: var(--pgn-color-text-base);
     }
 }

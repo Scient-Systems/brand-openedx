@@ -10491,4 +10491,9 @@ p > [data-paragon-theme-variant=dark] a.muted-link[href]:not(.btn):hover, [data-
 [data-paragon-theme-variant=dark] {
   color: var(--pgn-color-text-base) !important;
   background: var(--pgn-color-body-bg) !important;
+  color-scheme: dark;
+}
+[data-paragon-theme-variant=dark] select option, [data-paragon-theme-variant=dark] select optgroup {
+  background-color: var(--pgn-color-body-bg);
+  color: var(--pgn-color-text-base);
 }
