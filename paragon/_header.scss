@@ -507,7 +507,10 @@
 #root {
     header.site-header-desktop,
     header.site-header-mobile,
-    header.customise.learning-header {
+    // no .customise — that class only exists on edly's forked header, not the
+    // stock openedx one; with it the learning header stayed light while the
+    // global .user-dropdown night button went near-white-on-cream (invisible)
+    header.learning-header {
         background-color: #0A1226;
         background-image:
             radial-gradient(700px 150px at 8% -50%, rgba(47, 93, 217, 0.3), transparent 65%),
@@ -546,7 +549,7 @@
             background: #E9EEFA;
         }
     }
-    header.customise.learning-header {
+    header.learning-header {
         .course-title-lockup {
             .nav-course a {
                 font-family: 'Sora', sans-serif !important;
