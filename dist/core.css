@@ -2040,6 +2040,12 @@ body {
 #root header.site-header-desktop .secondary-menu-container .nav-link, #root header.site-header-desktop .secondary-menu-container .nav-link:hover, #root header.site-header-desktop .secondary-menu-container .nav-link:focus, #root header.site-header-desktop .secondary-menu-container .nav-link.active, #root header.site-header-desktop .secondary-menu-container .expanded .nav-link {
   color: #9F8BFF;
 }
+#root header.learning-header .course-title-lockup {
+  color: #E9EEFA;
+}
+#root header.learning-header .course-title-lockup span.small {
+  color: #8E9CC0;
+}
 #root header.learning-header .course-title-lockup .nav-course a {
   font-family: "Sora", sans-serif !important;
   color: #8E9CC0;
@@ -2053,6 +2059,26 @@ body {
 }
 #root header.learning-header .course-title-lockup .course-info-header .org {
   color: #8E9CC0;
+}
+@media (max-width: 768px) {
+  #root header.learning-header .user-dropdown button {
+    position: static !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 6px 10px !important;
+  }
+}
+#root header.site-header-desktop .theme-toggle-button .light-theme-icon > span,
+#root header.site-header-desktop .theme-toggle-button .dark-theme-icon > span,
+#root header.learning-header .theme-toggle-button .light-theme-icon > span,
+#root header.learning-header .theme-toggle-button .dark-theme-icon > span {
+  color: #8E9CC0;
+}
+#root header.site-header-desktop .theme-toggle-button .toggle-switch .switch .slider,
+#root header.learning-header .theme-toggle-button .toggle-switch .switch .slider {
+  background-color: rgba(233, 238, 250, 0.22);
+}
+#root header.site-header-mobile .theme-toggle-button {
+  padding: 10px 16px;
 }
 #root .nav-small-menu {
   border-bottom: 2px solid var(--pgn-color-primary-base) !important;
@@ -5948,6 +5974,12 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .nav-link, [data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .nav-link:hover, [data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .nav-link:focus, [data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .nav-link.active, [data-paragon-theme-variant=dark] #root header.site-header-desktop .secondary-menu-container .expanded .nav-link {
   color: #9F8BFF;
 }
+[data-paragon-theme-variant=dark] #root header.learning-header .course-title-lockup {
+  color: #E9EEFA;
+}
+[data-paragon-theme-variant=dark] #root header.learning-header .course-title-lockup span.small {
+  color: #8E9CC0;
+}
 [data-paragon-theme-variant=dark] #root header.learning-header .course-title-lockup .nav-course a {
   font-family: "Sora", sans-serif !important;
   color: #8E9CC0;
@@ -5961,6 +5993,26 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 [data-paragon-theme-variant=dark] #root header.learning-header .course-title-lockup .course-info-header .org {
   color: #8E9CC0;
+}
+@media (max-width: 768px) {
+  [data-paragon-theme-variant=dark] #root header.learning-header .user-dropdown button {
+    position: static !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 6px 10px !important;
+  }
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .theme-toggle-button .light-theme-icon > span,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .theme-toggle-button .dark-theme-icon > span,
+[data-paragon-theme-variant=dark] #root header.learning-header .theme-toggle-button .light-theme-icon > span,
+[data-paragon-theme-variant=dark] #root header.learning-header .theme-toggle-button .dark-theme-icon > span {
+  color: #8E9CC0;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .theme-toggle-button .toggle-switch .switch .slider,
+[data-paragon-theme-variant=dark] #root header.learning-header .theme-toggle-button .toggle-switch .switch .slider {
+  background-color: rgba(233, 238, 250, 0.22);
+}
+[data-paragon-theme-variant=dark] #root header.site-header-mobile .theme-toggle-button {
+  padding: 10px 16px;
 }
 [data-paragon-theme-variant=dark] #root .nav-small-menu {
   border-bottom: 2px solid var(--pgn-color-primary-base) !important;

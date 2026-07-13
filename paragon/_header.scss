@@ -551,6 +551,15 @@
     }
     header.learning-header {
         .course-title-lockup {
+            // stock header markup (v6.6.0) is plain spans: `.d-block.small.m-0`
+            // (org · number) + `.course-title`; color inherits from here. The
+            // nested .nav-course/.course-info-header selectors below only match
+            // edly's forked header — kept for reference, they no-op on stock.
+            color: #E9EEFA;
+
+            span.small {
+                color: #8E9CC0;
+            }
             .nav-course a {
                 font-family: 'Sora', sans-serif !important;
                 color: #8E9CC0;
@@ -568,6 +577,41 @@
                 }
             }
         }
+
+        // edly-era mobile rules yank .user-dropdown button to absolute
+        // left:15px/top:18px and strip its pill — designed for a header we
+        // don't ship. Pin it back for the stock learning header.
+        @media (max-width: 768px) {
+            .user-dropdown button {
+                position: static !important;
+                background: rgba(255, 255, 255, 0.1) !important;
+                padding: 6px 10px !important;
+            }
+        }
+    }
+    // Theme toggle sits on the always-night bands: its icons and track use
+    // --pgn-color-primary-base, which is navy in LIGHT mode → invisible
+    // (only the white knob shows). Fixed light tones read on navy in both
+    // themes; dark mode looks the same as before. site-header-mobile is NOT
+    // in this list: its only toggle lives inside the hamburger panel, which
+    // is theme-colored (light in light mode), so default colors are correct.
+    header.site-header-desktop,
+    header.learning-header {
+        .theme-toggle-button {
+            .light-theme-icon > span,
+            .dark-theme-icon > span {
+                color: #8E9CC0;
+            }
+            .toggle-switch .switch .slider {
+                background-color: rgba(233, 238, 250, 0.22);
+            }
+        }
+    }
+    // toggle row inside the mobile hamburger panel (inserted via
+    // header_mobile_main_menu slot; panel is theme-colored, so default icon
+    // colors are fine — just give it nav-link-like spacing)
+    header.site-header-mobile .theme-toggle-button {
+        padding: 10px 16px;
     }
     .user-dropdown button {
         background: rgba(255, 255, 255, 0.1) !important;
