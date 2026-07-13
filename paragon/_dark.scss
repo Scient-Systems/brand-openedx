@@ -9,7 +9,13 @@
     @import "./account";
     @import "./profile";
     @import "./dates";
-    @import "./dashboard";
+    // DISABLED (2026-07-14): _dashboard.scss self-manages dark via its own
+    // [data-paragon-theme-variant="dark"] #dashboard-container block (already
+    // compiled once through _overrides.scss). Re-importing it here wraps its
+    // top-level LIGHT custom-prop block as [dark] #dashboard-container, which
+    // the minifier merges after the real dark block — light values (navy
+    // eyebrows, #FFF cards, pastel tints) then win in dark mode.
+    // @import "./dashboard";
     @import "../themes/dark/utilities";
     @import "../themes/dark/extras";
 

@@ -1,10 +1,13 @@
 // ============================================================================
 // Flight deck — learner-dashboard MFE (Ulmo) structural pass.
 //
-// Imported by _overrides.scss (light) AND re-imported by _dark.scss inside
-// [data-paragon-theme-variant="dark"], so this file compiles twice.
-// Theme-flipping values live in the --sqa-* custom props below (the explicit
-// dark-attribute block wins when the html attribute is set); raw hexes are
+// Imported ONLY by _overrides.scss — unlike the other section files, this one
+// must NOT be re-imported by _dark.scss: it self-manages dark via the
+// explicit [data-paragon-theme-variant="dark"] #dashboard-container block
+// below. (A _dark.scss re-import wraps the top-level light block as
+// [dark] #dashboard-container and the minifier merges it AFTER the real dark
+// block, so light values win in dark mode — bug fixed 2026-07-14.)
+// Theme-flipping values live in the --sqa-* custom props below; raw hexes are
 // deliberate and apply to BOTH variants (e.g. the sapphire instrument card,
 // which stays a night object even on the sage-frost page).
 //
@@ -735,12 +738,16 @@
         text-align: center;
         font-family: "Hanken Grotesk", sans-serif;
         font-size: 0.82rem;
-        color: #8E9CC0;
-        text-decoration: none;
+        // #8E9CC0 read as dead text next to the CTA; brighter + underlined so
+        // it registers as a link on the sapphire card (night object, both themes)
+        color: #C2CDE8;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-color: rgba(194, 205, 232, 0.45);
 
         &:hover {
-            color: #BCABFF;
-            text-decoration: underline;
+            color: #E9EEFA;
+            text-decoration-color: #BCABFF;
         }
     }
 
