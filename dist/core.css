@@ -4692,8 +4692,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   margin-top: 0;
 }
 #dashboard-container .sidebar-column #sqa-rail {
-  position: sticky;
-  top: 24px;
+  position: static;
   display: flex;
   flex-direction: column;
   gap: 14px;
