@@ -223,8 +223,9 @@
         }
 
         #sqa-rail {
-            position: sticky;
-            top: 24px;
+            // Sidebar scrolls with the page. Was position:sticky, but the
+            // pathways card is a separate sibling widget in this same slot and
+            // isn't sticky, so pinning only the rail desynced the two cards.
             display: flex;
             flex-direction: column;
             gap: 14px;
