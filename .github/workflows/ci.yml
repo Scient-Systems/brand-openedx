@@ -1,0 +1,84 @@
+name: CI
+
+# Per-repo quality gate for the brand package.
+#
+# WHY THE dist/ CHECK MATTERS HERE MORE THAN ELSEWHERE
+# ----------------------------------------------------
+# This repo is consumed TWO ways and they can silently drift apart:
+#   1. build time - the mfe image runs
+#      npm install '@edx/brand@github:Scient-Systems/brand-openedx#ulmo/indigo'
+#   2. runtime    - the CSS in dist/ is served from jsDelivr, pinned by
+#      BRAND_DIST_REF in the indigo plugin
+#
+# dist/ is COMMITTED, so pushing publishes the runtime CSS immediately. A stale
+# dist/ therefore ships to users without anything failing. This workflow rebuilds
+# it and fails if the committed output no longer matches the source.
+#
+# The repo must stay PUBLIC - browsers fetch this CSS by URL. (runbook 10 §3)
+
+on:
+  push:
+    branches: [ulmo/indigo, master]
+  pull_request:
+
+jobs:
+  build:
+    name: build & dist freshness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc     # currently v22.14.0
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      # Makefile build: rm -rf dist && npm run build-tokens && npm run build-scss
+      - name: Build
+        run: npm run build
+
+      # If rebuilding from source changes dist/, the committed CSS is stale and
+      # the runtime layer is serving something the source no longer produces.
+      #
+      # .map files are excluded: source maps can embed absolute paths and are not
+      # reliably byte-reproducible across machines. The .css output is what ships.
+      - name: dist/ is in step with source
+        run: |
+          if ! git diff --exit-code -- 'dist/*.css' > /tmp/dist.diff 2>&1; then
+            echo "::error::dist/ is stale - rebuilding from source produced different CSS."
+            echo "Run 'npm run build' locally and commit the result."
+            echo "--- changed files ---"
+            git diff --name-only -- 'dist/*.css'
+            echo "--- diff (first 100 lines) ---"
+            head -100 /tmp/dist.diff
+            exit 1
+          fi
+          echo "dist/ matches source."
+
+      - name: Report any non-css drift (informational)
+        if: always()
+        run: |
+          git status --porcelain -- dist/ || true
+
+  notify-deploy-repo:
+    name: notify openedx-deploy
+    needs: [build]
+    if: github.ref == 'refs/heads/ulmo/indigo' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: repository_dispatch
+        env:
+          TOKEN: ${{ secrets.DEPLOY_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "DEPLOY_DISPATCH_TOKEN not set - skipping dispatch (expected until task-cicd-02)."
+            exit 0
+          fi
+          curl -sSf -X POST \
+            -H "Authorization: token $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/Scient-Systems/openedx-deploy/dispatches \
+            -d "{\"event_type\":\"source-updated\",\"client_payload\":{\"repo\":\"$GITHUB_REPOSITORY\",\"sha\":\"$GITHUB_SHA\"}}"
