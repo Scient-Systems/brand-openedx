@@ -1,0 +1,67 @@
+name: Bump BRAND_DIST_REF in tutor-indigo
+
+# WHY THIS EXISTS
+# ---------------
+# This repo is consumed TWO ways, and they are pinned in different places:
+#
+#   build time - the mfe image runs
+#                npm install '@edx/brand@github:Scient-Systems/brand-openedx#ulmo/indigo'
+#                which follows this BRANCH
+#   runtime    - dist/ CSS is served from jsDelivr, pinned by BRAND_DIST_REF,
+#                a hard-coded SHA in tutor-indigo/tutorindigo/plugin.py
+#
+# The runtime path is what actually serves CSS to browsers. Left to a human, it
+# gets forgotten - and forgetting it fails SILENTLY: this repo's CI passes, the
+# pin PR opens, the image builds, staging deploys, and the site keeps serving the
+# OLD stylesheet with every signal green.
+#
+# So the bump is raised automatically, as a PR against tutor-indigo, the moment
+# dist/ changes here.
+
+on:
+  push:
+    branches: [ulmo/indigo]
+    paths: ['dist/**']
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open a PR against tutor-indigo
+        env:
+          TOKEN: ${{ secrets.INDIGO_BUMP_TOKEN }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "INDIGO_BUMP_TOKEN not set - skipping."
+            echo "::warning::BRAND_DIST_REF was NOT bumped. Do it by hand in tutor-indigo/tutorindigo/plugin.py or the runtime CSS stays on the old commit."
+            exit 0
+          fi
+          set -euo pipefail
+          git clone --depth 1 -b release "https://x-access-token:${TOKEN}@github.com/Scient-Systems/tutor-indigo.git" ti
+          cd ti
+
+          OLD=$(grep -oE 'BRAND_DIST_REF = "[0-9a-f]{40}"' tutorindigo/plugin.py | grep -oE '[0-9a-f]{40}')
+          if [ "$OLD" = "$SHA" ]; then echo "already at $SHA"; exit 0; fi
+
+          sed -i "s/BRAND_DIST_REF = \"$OLD\"/BRAND_DIST_REF = \"$SHA\"/" tutorindigo/plugin.py
+          grep -n 'BRAND_DIST_REF = ' tutorindigo/plugin.py
+
+          BR="brand-ref/${SHA:0:12}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BR"
+          # Multiple -m rather than an embedded multi-line string: unindented
+          # newlines inside a `run: |` block break out of the YAML block scalar.
+          git commit -qam "brand: bump BRAND_DIST_REF to ${SHA:0:12}" \
+            -m "Raised automatically by brand-openedx after a dist/ change." \
+            -m "The runtime CSS is served from jsDelivr pinned by this SHA, so without this bump the site keeps serving the previous stylesheet while every other signal stays green."
+          git push -q origin "$BR"
+
+          curl -sSf -X POST \
+            -H "Authorization: token ${TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/Scient-Systems/tutor-indigo/pulls \
+            -d "{\"title\":\"brand: bump BRAND_DIST_REF to ${SHA:0:12}\",\"head\":\"${BR}\",\"base\":\"release\",\"body\":\"Automatic. brand-openedx \`dist/\` changed at \`${SHA}\`.\\n\\nWithout this the runtime CSS keeps serving the previous commit, and nothing fails to warn you.\"}" \
+            > /dev/null
+          echo "PR opened on tutor-indigo for ${SHA:0:12}"
