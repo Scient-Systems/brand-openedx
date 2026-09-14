@@ -9835,3 +9835,14 @@ p > [data-paragon-theme-variant=dark] a.muted-link[href]:not(.btn):hover, [data-
   background-color: var(--pgn-color-body-bg);
   color: var(--pgn-color-text-base);
 }
+.btn:focus,
+.btn:focus-visible,
+.pgn__icon-button:focus,
+.pgn__icon-button:focus-visible,
+button:focus,
+button:focus-visible,
+a.btn:focus,
+a.btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
