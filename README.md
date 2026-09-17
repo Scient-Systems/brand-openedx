@@ -1,5 +1,24 @@
 # Open edX Brand Package Interface
 
+> **Branch: `verawood/indigo`** — the Stem Quest Academy brand for the Verawood
+> (Tutor 22) platform line. `ulmo/indigo` is the same brand for Ulmo (Tutor 21)
+> and still serves staging and production; do not delete it.
+>
+> Both branches carry identical styling today: upstream's own `verawood/indigo`
+> work is already an ancestor of this branch, and Verawood's MFEs use Paragon
+> 23, which this package already builds against. The branches exist so the two
+> platform lines can diverge without one breaking the other.
+>
+> Consumed two ways, which can drift apart:
+>   1. **build time** — the MFE image runs
+>      `npm install '@edx/brand@github:Scient-Systems/brand-openedx#verawood/indigo'`
+>   2. **runtime** — CSS served from jsDelivr, pinned by `BRAND_DIST_REF` in
+>      tutor-indigo's `plugin.py` (branch `verawood/indigo`).
+>
+> `dist/` is committed, so pushing publishes the runtime layer immediately.
+> After any change here: run `make build`, commit `dist/`, then bump
+> `BRAND_DIST_REF` to the new commit SHA.
+
 This project contains the default branding assets and style used in Open edX
 applications. It is published on npm as `@openedx/brand-openedx`.
 
