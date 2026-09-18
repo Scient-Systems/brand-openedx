@@ -651,6 +651,48 @@
         }
     }
 }
+// Logged-out actions (Login / Sign Up) on the night header.
+// These were never styled: on Ulmo nobody landed on an MFE logged out, because
+// the homepage was the LMS template. On Verawood the Catalog MFE IS the
+// homepage, and in the light variant Paragon handed these the DAY colors —
+// Sign Up rendered ink (#101A33) on midnight (#0A1226), ~1.05:1, invisible;
+// Login rendered viola-600 (#5A41C4), ~2.3:1. The header is night chrome in
+// both variants, so these colors are literal, like the rest of this block.
+// DESIGN_SYSTEM.md 7: "NavBar — midnight glass ... ember CTA" (olive, flat,
+// ink text; never white on olive).
+#root {
+    header.site-header-desktop,
+    header.site-header-mobile {
+        a.btn-outline-primary,
+        button.btn-outline-primary {
+            background-color: #8CA12C;
+            border-color: #8CA12C;
+            color: #101A33;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            border-radius: 12px;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: #A9BC3F;
+                border-color: #A9BC3F;
+                color: #101A33;
+            }
+        }
+        a.btn-link,
+        button.btn-link {
+            color: #E9EEFA;
+            font-weight: 600;
+
+            &:hover,
+            &:focus {
+                color: #FFFFFF;
+                text-decoration: underline;
+            }
+        }
+    }
+}
 #root {
     .nav-small-menu {
         border-bottom: 2px solid var(--pgn-color-primary-base) !important;

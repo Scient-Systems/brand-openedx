@@ -2080,6 +2080,48 @@ body {
 #root header.site-header-mobile .theme-toggle-button {
   padding: 10px 16px;
 }
+#root header.site-header-desktop a.btn-outline-primary,
+#root header.site-header-desktop button.btn-outline-primary,
+#root header.site-header-mobile a.btn-outline-primary,
+#root header.site-header-mobile button.btn-outline-primary {
+  background-color: #8CA12C;
+  border-color: #8CA12C;
+  color: #101A33;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+}
+#root header.site-header-desktop a.btn-outline-primary:hover, #root header.site-header-desktop a.btn-outline-primary:focus, #root header.site-header-desktop a.btn-outline-primary:active,
+#root header.site-header-desktop button.btn-outline-primary:hover,
+#root header.site-header-desktop button.btn-outline-primary:focus,
+#root header.site-header-desktop button.btn-outline-primary:active,
+#root header.site-header-mobile a.btn-outline-primary:hover,
+#root header.site-header-mobile a.btn-outline-primary:focus,
+#root header.site-header-mobile a.btn-outline-primary:active,
+#root header.site-header-mobile button.btn-outline-primary:hover,
+#root header.site-header-mobile button.btn-outline-primary:focus,
+#root header.site-header-mobile button.btn-outline-primary:active {
+  background-color: #A9BC3F;
+  border-color: #A9BC3F;
+  color: #101A33;
+}
+#root header.site-header-desktop a.btn-link,
+#root header.site-header-desktop button.btn-link,
+#root header.site-header-mobile a.btn-link,
+#root header.site-header-mobile button.btn-link {
+  color: #E9EEFA;
+  font-weight: 600;
+}
+#root header.site-header-desktop a.btn-link:hover, #root header.site-header-desktop a.btn-link:focus,
+#root header.site-header-desktop button.btn-link:hover,
+#root header.site-header-desktop button.btn-link:focus,
+#root header.site-header-mobile a.btn-link:hover,
+#root header.site-header-mobile a.btn-link:focus,
+#root header.site-header-mobile button.btn-link:hover,
+#root header.site-header-mobile button.btn-link:focus {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
 #root .nav-small-menu {
   border-bottom: 2px solid var(--pgn-color-primary-base) !important;
   box-shadow: none !important;
@@ -6424,6 +6466,48 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 [data-paragon-theme-variant=dark] #root header.site-header-mobile .theme-toggle-button {
   padding: 10px 16px;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary {
+  background-color: #8CA12C;
+  border-color: #8CA12C;
+  color: #101A33;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary:hover, [data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary:focus, [data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary:active,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:hover,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:focus,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:active,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary:hover,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary:focus,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary:active,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:hover,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:focus,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:active {
+  background-color: #A9BC3F;
+  border-color: #A9BC3F;
+  color: #101A33;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-link,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-link,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-link,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-link {
+  color: #E9EEFA;
+  font-weight: 600;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-link:hover, [data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-link:focus,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-link:hover,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-link:focus,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-link:hover,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-link:focus,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-link:hover,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-link:focus {
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 [data-paragon-theme-variant=dark] #root .nav-small-menu {
   border-bottom: 2px solid var(--pgn-color-primary-base) !important;
