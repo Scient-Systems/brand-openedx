@@ -498,6 +498,7 @@ body {
 @import "./dates";
 @import "./extras";
 @import "./dashboard";
+@import "./catalog";   // Verawood Catalog MFE. NOT in _dark.scss -- self-manages dark, like dashboard.
 
 
 // Including dark theme
