@@ -5727,6 +5727,45 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 .sqa-cat-empty .sqa-cat-quiet {
   margin-top: 18px;
 }
+.sqa-cat-page {
+  padding-bottom: 8px;
+}
+.sqa-cat-page-title {
+  margin: 0;
+  font-family: "Sora", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.1;
+  color: var(--sqa-cat-ink);
+}
+.sqa-cat-page-sub {
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: var(--sqa-cat-ink-soft);
+}
+.sqa-cat-page-sub a {
+  font-weight: 600;
+}
+.sqa-cat-find-day input {
+  background: var(--sqa-cat-card);
+  border-color: var(--sqa-cat-hairline);
+  color: var(--sqa-cat-ink);
+}
+.sqa-cat-find-day input::placeholder {
+  color: var(--sqa-cat-ink-soft);
+}
+.sqa-cat-list-flat {
+  padding-bottom: 0;
+}
+.sqa-cat-panel-flat {
+  margin-top: 24px;
+}
+@media (max-width: 640px) {
+  .sqa-cat-panel-flat {
+    margin-top: 20px;
+  }
+}
 [data-paragon-theme-variant=dark] #root {
   position: relative;
   z-index: 1;
