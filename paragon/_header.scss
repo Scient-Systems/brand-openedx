@@ -664,7 +664,7 @@
     header.site-header-desktop,
     header.site-header-mobile {
         a.btn-outline-primary,
-        button.btn-outline-primary {
+        button.btn-outline-primary:not(.menu-trigger) {
             background-color: #8CA12C;
             border-color: #8CA12C;
             color: #101A33;
@@ -690,6 +690,34 @@
                 color: #FFFFFF;
                 text-decoration: underline;
             }
+        }
+    }
+}
+// Logged-in account menu and notification bell on the night header.
+// Verawood's account trigger is `button.menu-trigger.btn-outline-primary`, so
+// the Sign Up rule above caught it: ink (#101A33) text on the glass pill,
+// unreadable in the light variant. The bell icon is marked text-primary-500,
+// which is navy in the light variant, so navy on the navy band. Same night
+// colors in both variants, like the rest of this header.
+#root {
+    header.site-header-desktop,
+    header.site-header-mobile {
+        .menu button.menu-trigger {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(233, 238, 250, 0.18) !important;
+            color: #E9EEFA;
+
+            &:hover,
+            &:focus,
+            &[aria-expanded="true"] {
+                background: rgba(255, 255, 255, 0.18) !important;
+                color: #FFFFFF;
+            }
+        }
+        // Re-point the token the utility reads, rather than out-!important it.
+        .notification-button {
+            --pgn-color-primary-500: #E9EEFA;
+            --pgn-color-action-default-primary-500: #FFFFFF;
         }
     }
 }

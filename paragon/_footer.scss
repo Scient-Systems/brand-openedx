@@ -181,28 +181,37 @@ footer.tutor-container {
                                 }
                             }
                         }
-                        .pgn__card-wrapper-image-cap.horizontal {
-                            min-width: 100%;
-                            max-width: 100%;
-                            @media screen and (min-width: 590px) {
-                                min-width: 225px;
-                                max-width: 225px;
+                        // Phones only. From 768px up the card is a ledger row
+                        // owned by _dashboard.scss; on Verawood the dashboard
+                        // DOM matches this long chain, so these rules started
+                        // out-ranking the ledger (275px thumbnail, title pushed
+                        // right). Plain px query: --pgn custom media is not
+                        // compiled out of dist.
+                        @media (max-width: 767.98px) {
+                            .pgn__card-wrapper-image-cap.horizontal {
+                                min-width: 100%;
+                                max-width: 100%;
+                                @media screen and (min-width: 590px) {
+                                    min-width: 225px;
+                                    max-width: 225px;
+                                }
+                                img {
+                                    width: 100%;
+                                    height: 145px;
+                                }
                             }
-                            @media (--pgn-size-breakpoint-min-width-md) {
-                                min-width: 275px;
-                                max-width: 275px;
+                            .pgn__card-body {
+                                display: flex;
+                                flex-direction: column;
                             }
-                            img {
-                                width: 100%;
-                                height: 145px;
+                            .pgn__card-header {
+                                padding: 9px 21px 0;
                             }
-                        }
-                        .pgn__card-body {
-                            display: flex;
-                            flex-direction: column;
+                            .pgn__card-footer {
+                                padding: 0 21px 20px;
+                            }
                         }
                         .pgn__card-header {
-                            padding: 9px 21px 0;
                             .pgn__card-header-content {
                                 margin: 0;
                                 h3 {
@@ -242,9 +251,6 @@ footer.tutor-container {
                                 font-size: 12px;
                                 color: var(--pgn-color-text-primary);
                             }
-                        }
-                        .pgn__card-footer {
-                            padding: 0 21px 20px;
                         }
                         .pgn__action-row {
                             flex-direction: row;

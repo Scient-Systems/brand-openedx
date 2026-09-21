@@ -440,7 +440,10 @@ a.course-card-title {
                             }
                         }
                         .pgn__card-footer {
-                            padding: 0 21px 20px;
+                            // phones only: from 768px the ledger row owns this
+                            @media (max-width: 767.98px) {
+                                padding: 0 21px 20px;
+                            }
                         }
                         .pgn__action-row {
                             button, a {

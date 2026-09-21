@@ -2081,9 +2081,9 @@ body {
   padding: 10px 16px;
 }
 #root header.site-header-desktop a.btn-outline-primary,
-#root header.site-header-desktop button.btn-outline-primary,
+#root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger),
 #root header.site-header-mobile a.btn-outline-primary,
-#root header.site-header-mobile button.btn-outline-primary {
+#root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger) {
   background-color: #8CA12C;
   border-color: #8CA12C;
   color: #101A33;
@@ -2092,15 +2092,15 @@ body {
   border-radius: 12px;
 }
 #root header.site-header-desktop a.btn-outline-primary:hover, #root header.site-header-desktop a.btn-outline-primary:focus, #root header.site-header-desktop a.btn-outline-primary:active,
-#root header.site-header-desktop button.btn-outline-primary:hover,
-#root header.site-header-desktop button.btn-outline-primary:focus,
-#root header.site-header-desktop button.btn-outline-primary:active,
+#root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger):hover,
+#root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger):focus,
+#root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger):active,
 #root header.site-header-mobile a.btn-outline-primary:hover,
 #root header.site-header-mobile a.btn-outline-primary:focus,
 #root header.site-header-mobile a.btn-outline-primary:active,
-#root header.site-header-mobile button.btn-outline-primary:hover,
-#root header.site-header-mobile button.btn-outline-primary:focus,
-#root header.site-header-mobile button.btn-outline-primary:active {
+#root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger):hover,
+#root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger):focus,
+#root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger):active {
   background-color: #A9BC3F;
   border-color: #A9BC3F;
   color: #101A33;
@@ -2121,6 +2121,24 @@ body {
 #root header.site-header-mobile button.btn-link:focus {
   color: #FFFFFF;
   text-decoration: underline;
+}
+#root header.site-header-desktop .menu button.menu-trigger,
+#root header.site-header-mobile .menu button.menu-trigger {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(233, 238, 250, 0.18) !important;
+  color: #E9EEFA;
+}
+#root header.site-header-desktop .menu button.menu-trigger:hover, #root header.site-header-desktop .menu button.menu-trigger:focus, #root header.site-header-desktop .menu button.menu-trigger[aria-expanded=true],
+#root header.site-header-mobile .menu button.menu-trigger:hover,
+#root header.site-header-mobile .menu button.menu-trigger:focus,
+#root header.site-header-mobile .menu button.menu-trigger[aria-expanded=true] {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF;
+}
+#root header.site-header-desktop .notification-button,
+#root header.site-header-mobile .notification-button {
+  --pgn-color-primary-500: #E9EEFA;
+  --pgn-color-action-default-primary-500: #FFFFFF;
 }
 #root .nav-small-menu {
   border-bottom: 2px solid var(--pgn-color-primary-base) !important;
@@ -2397,38 +2415,33 @@ footer.tutor-container .copyright-site {
   font-size: inherit;
   line-height: inherit;
 }
-#dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
-  min-width: 100%;
-  max-width: 100%;
+@media (max-width: 767.98px) {
+  #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
-@media screen and (min-width: 590px) {
+@media screen and (max-width: 767.98px) and (min-width: 590px) {
   #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
     min-width: 225px;
     max-width: 225px;
   }
 }
-@media (min-width: 768px) {
-  #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
-    min-width: 275px;
-    max-width: 275px;
+@media (max-width: 767.98px) {
+  #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal img {
+    width: 100%;
+    height: 145px;
   }
-}
-@media (--pgn-size-breakpoint-min-width-md) {
-  #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
-    min-width: 275px;
-    max-width: 275px;
+  #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-body {
+    display: flex;
+    flex-direction: column;
   }
-}
-#dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal img {
-  width: 100%;
-  height: 145px;
-}
-#dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-body {
-  display: flex;
-  flex-direction: column;
-}
-#dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-header {
-  padding: 9px 21px 0;
+  #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-header {
+    padding: 9px 21px 0;
+  }
+  #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-footer {
+    padding: 0 21px 20px;
+  }
 }
 #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-header .pgn__card-header-content {
   margin: 0;
@@ -2468,9 +2481,6 @@ footer.tutor-container .copyright-site {
 #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-section .small {
   font-size: 12px;
   color: var(--pgn-color-text-primary);
-}
-#dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-footer {
-  padding: 0 21px 20px;
 }
 #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__action-row {
   flex-direction: row;
@@ -4976,6 +4986,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
     width: 76px;
     height: 76px;
     flex: 0 0 76px;
+    min-width: 76px;
     max-width: 76px;
     border-radius: 14px;
     overflow: hidden;
@@ -4986,6 +4997,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: left center;
     border-radius: 0 !important;
   }
   #dashboard-container .course-card .pgn__card-body {
@@ -6507,9 +6519,9 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   padding: 10px 16px;
 }
 [data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary,
-[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger),
 [data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary,
-[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary {
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger) {
   background-color: #8CA12C;
   border-color: #8CA12C;
   color: #101A33;
@@ -6518,15 +6530,15 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   border-radius: 12px;
 }
 [data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary:hover, [data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary:focus, [data-paragon-theme-variant=dark] #root header.site-header-desktop a.btn-outline-primary:active,
-[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:hover,
-[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:focus,
-[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:active,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger):hover,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger):focus,
+[data-paragon-theme-variant=dark] #root header.site-header-desktop button.btn-outline-primary:not(.menu-trigger):active,
 [data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary:hover,
 [data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary:focus,
 [data-paragon-theme-variant=dark] #root header.site-header-mobile a.btn-outline-primary:active,
-[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:hover,
-[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:focus,
-[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:active {
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger):hover,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger):focus,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-outline-primary:not(.menu-trigger):active {
   background-color: #A9BC3F;
   border-color: #A9BC3F;
   color: #101A33;
@@ -6547,6 +6559,24 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] #root header.site-header-mobile button.btn-link:focus {
   color: #FFFFFF;
   text-decoration: underline;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .menu button.menu-trigger,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile .menu button.menu-trigger {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(233, 238, 250, 0.18) !important;
+  color: #E9EEFA;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .menu button.menu-trigger:hover, [data-paragon-theme-variant=dark] #root header.site-header-desktop .menu button.menu-trigger:focus, [data-paragon-theme-variant=dark] #root header.site-header-desktop .menu button.menu-trigger[aria-expanded=true],
+[data-paragon-theme-variant=dark] #root header.site-header-mobile .menu button.menu-trigger:hover,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile .menu button.menu-trigger:focus,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile .menu button.menu-trigger[aria-expanded=true] {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF;
+}
+[data-paragon-theme-variant=dark] #root header.site-header-desktop .notification-button,
+[data-paragon-theme-variant=dark] #root header.site-header-mobile .notification-button {
+  --pgn-color-primary-500: #E9EEFA;
+  --pgn-color-action-default-primary-500: #FFFFFF;
 }
 [data-paragon-theme-variant=dark] #root .nav-small-menu {
   border-bottom: 2px solid var(--pgn-color-primary-base) !important;
@@ -6808,38 +6838,33 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   color: var(--pgn-color-text-base);
   text-decoration: underline;
 }
-[data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
-  min-width: 100%;
-  max-width: 100%;
+@media (max-width: 767.98px) {
+  [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
-@media screen and (min-width: 590px) {
+@media screen and (max-width: 767.98px) and (min-width: 590px) {
   [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
     min-width: 225px;
     max-width: 225px;
   }
 }
-@media (min-width: 768px) {
-  [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
-    min-width: 275px;
-    max-width: 275px;
+@media (max-width: 767.98px) {
+  [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal img {
+    width: 100%;
+    height: 145px;
   }
-}
-@media (--pgn-size-breakpoint-min-width-md) {
-  [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal {
-    min-width: 275px;
-    max-width: 275px;
+  [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-body {
+    display: flex;
+    flex-direction: column;
   }
-}
-[data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-wrapper-image-cap.horizontal img {
-  width: 100%;
-  height: 145px;
-}
-[data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-body {
-  display: flex;
-  flex-direction: column;
-}
-[data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-header {
-  padding: 9px 21px 0;
+  [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-header {
+    padding: 9px 21px 0;
+  }
+  [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-footer {
+    padding: 0 21px 20px;
+  }
 }
 [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-header .pgn__card-header-content {
   margin: 0;
@@ -6886,9 +6911,6 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-section .small {
   font-size: 12px;
   color: var(--pgn-color-text-primary);
-}
-[data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-footer {
-  padding: 0 21px 20px;
 }
 [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__action-row {
   flex-direction: row;
@@ -9926,6 +9948,8 @@ p > [data-paragon-theme-variant=dark] a.muted-link[href]:not(.btn):hover, [data-
 [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .course-list-column .course-card .pgn__card .pgn__card-header .dropdown-menu a:hover {
   color: var(--pgn-color-text-base) !important;
   background: var(--pgn-color-body-bg) !important;
+}
+@media (max-width: 767.98px) {
 }
 [data-paragon-theme-variant=dark] #dashboard-container .container-mw-xl.container-fluid .row .sidebar-column .widget-sidebar div {
   background: none !important;
