@@ -2332,8 +2332,8 @@ footer.tutor-container .copyright-site {
   --sqa-ring-track: rgba(16, 26, 51, 0.08);
   --sqa-card-hover-shadow: 0 18px 44px -22px rgba(16, 26, 51, 0.30);
   padding: 20px 0 64px;
-  background-image: radial-gradient(90rem 30rem at 16% -8rem, rgba(169, 188, 63, 0.1), transparent 60%), radial-gradient(70rem 26rem at 94% -10rem, rgba(159, 139, 255, 0.09), transparent 55%), linear-gradient(var(--sqa-grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--sqa-grid-line) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+  background-image: radial-gradient(90rem 30rem at 16% -8rem, rgba(169, 188, 63, 0.08), transparent 60%), radial-gradient(70rem 26rem at 94% -10rem, rgba(159, 139, 255, 0.07), transparent 55%);
+  background-size: 100% 100%, 100% 100%;
 }
 @media (min-width: 992px) {
   #dashboard-container #dashboard-content {
@@ -3142,6 +3142,25 @@ footer.footer {
 }
 .pgn__checkpoint[data-popper-placement^=right] > #pgn__checkpoint-arrow::after {
   border-right: solid 15px var(--pgn-color-primary-light);
+}
+#pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary,
+#pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link,
+.pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary,
+.pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link {
+  background: transparent;
+  color: var(--pgn-color-text-base);
+  border: 1px solid var(--pgn-color-text-base);
+  font-weight: 500;
+}
+#pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:hover, #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:focus,
+#pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:hover,
+#pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:focus,
+.pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:hover,
+.pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:focus,
+.pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:hover,
+.pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:focus {
+  background: var(--pgn-color-bg-light-overlay);
+  color: var(--pgn-color-text-base);
 }
 #courseHome-outline .pgn_collapsible {
   border-radius: 8px;
@@ -4606,23 +4625,23 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   border-radius: 50%;
 }
 [data-paragon-theme-variant=dark] #dashboard-container {
-  --sqa-ink: #E9EEFA;
-  --sqa-ink-soft: #8E9CC0;
-  --sqa-card-bg: #101B38;
-  --sqa-hairline: rgba(151, 170, 215, 0.14);
-  --sqa-hairline-strong: rgba(151, 170, 215, 0.26);
-  --sqa-grid-line: rgba(151, 170, 215, 0.05);
+  --sqa-ink: #F2F5FC;
+  --sqa-ink-soft: #B8C3DD;
+  --sqa-card-bg: #17244C;
+  --sqa-hairline: rgba(190, 205, 240, 0.26);
+  --sqa-hairline-strong: rgba(190, 205, 240, 0.38);
+  --sqa-grid-line: rgba(151, 170, 215, 0.07);
   --sqa-cta-bg: #A9BC3F;
   --sqa-cta-ink: #0A1226;
   --sqa-cta-hover: #C6D465;
   --sqa-cta-shadow: rgba(169, 188, 63, 0.35);
-  --sqa-tint-olive-bg: rgba(169, 188, 63, 0.12);
+  --sqa-tint-olive-bg: #17244C;
   --sqa-tint-olive-ink: #C6D465;
-  --sqa-tint-viola-bg: rgba(159, 139, 255, 0.14);
+  --sqa-tint-viola-bg: #17244C;
   --sqa-tint-viola-ink: #BCABFF;
-  --sqa-tint-jade-bg: rgba(69, 196, 138, 0.12);
-  --sqa-tint-jade-ink: #45C48A;
-  --sqa-ring-track: rgba(233, 238, 250, 0.10);
+  --sqa-tint-jade-bg: #17244C;
+  --sqa-tint-jade-ink: #5BD392;
+  --sqa-ring-track: rgba(233, 238, 250, 0.18);
   --sqa-card-hover-shadow: 0 18px 44px -20px rgba(0, 0, 0, 0.55);
   padding: 0 !important;
 }
@@ -4731,7 +4750,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   margin: 0;
 }
 #dashboard-container .course-list-title::before {
-  content: "COURSE LEDGER"/"";
+  content: "YOUR COURSES"/"";
   display: block;
   font-family: "JetBrains Mono", monospace;
   font-size: 10px;
@@ -4841,6 +4860,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   gap: 14px;
   padding: 14px 16px;
   border-radius: 18px;
+  border: 1px solid var(--sqa-hairline);
   transition: transform 0.25s ease;
   animation: sqa-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -5042,9 +5062,9 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   overflow: hidden;
   padding: 22px;
   border-radius: 24px;
-  border: 1px solid rgba(151, 170, 215, 0.18);
-  color: #E9EEFA;
-  background: radial-gradient(120% 90% at 85% -10%, rgba(159, 139, 255, 0.16), transparent 55%), linear-gradient(180deg, #18254A 0%, #101B38 45%, #0A1226 100%);
+  border: 1px solid rgba(190, 205, 240, 0.26);
+  color: #F2F5FC;
+  background: radial-gradient(120% 90% at 85% -10%, rgba(159, 139, 255, 0.16), transparent 55%), linear-gradient(180deg, #1C2A56 0%, #17244C 60%, #142046 100%);
 }
 #dashboard-container #sqa-membership::before {
   content: "";
@@ -5326,6 +5346,13 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   #dashboard-container .sidebar-column #sqa-rail {
     position: static;
   }
+}
+#dashboard-container .course-card .pgn__card-header-actions {
+  z-index: 30;
+}
+#dashboard-container .course-card:has(.dropdown-menu.show) {
+  position: relative;
+  z-index: 30;
 }
 .sqa-cat {
   --sqa-cat-ink: #101A33;
@@ -7607,6 +7634,25 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 [data-paragon-theme-variant=dark] .pgn__checkpoint[data-popper-placement^=right] > #pgn__checkpoint-arrow::after {
   border-right: solid 15px var(--pgn-color-primary-light);
+}
+[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary,
+[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link,
+[data-paragon-theme-variant=dark] .pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary,
+[data-paragon-theme-variant=dark] .pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link {
+  background: transparent;
+  color: var(--pgn-color-text-base);
+  border: 1px solid var(--pgn-color-text-base);
+  font-weight: 500;
+}
+[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:hover, [data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:focus,
+[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:hover,
+[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:focus,
+[data-paragon-theme-variant=dark] .pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:hover,
+[data-paragon-theme-variant=dark] .pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary:focus,
+[data-paragon-theme-variant=dark] .pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:hover,
+[data-paragon-theme-variant=dark] .pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-link:focus {
+  background: var(--pgn-color-bg-light-overlay);
+  color: var(--pgn-color-text-base);
 }
 [data-paragon-theme-variant=dark] #courseHome-outline .pgn_collapsible {
   border-radius: 8px;
@@ -10046,10 +10092,6 @@ p > [data-paragon-theme-variant=dark] a.muted-link[href]:not(.btn):hover, [data-
 }
 [data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-body {
   color: var(--pgn-color-text-base);
-}
-[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-action-row .btn.btn-tertiary {
-  color: var(--pgn-color-text-base);
-  background: black;
 }
 [data-paragon-theme-variant=dark] .pgn__modal.pgn__modal-default .bg-white .pgn__action-row button.btn-tertiary {
   border: 1px solid var(--pgn-color-text-base);

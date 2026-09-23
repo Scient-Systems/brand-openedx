@@ -68,3 +68,27 @@
 .pgn__checkpoint[data-popper-placement^=right] > #pgn__checkpoint-arrow::after {
     border-right: solid 15px var(--pgn-color-primary-light);
 }
+
+// Product tour action row ("Dismiss" / "Back" beside "Next"). Paragon renders
+// those as btn-tertiary, which carried no colors of its own here: the dark
+// variant painted it solid black so the label vanished into it, and the light
+// variant left day colors on the night popover. Tie both to the popover's own
+// text color, so the label always contrasts with whatever it sits on.
+#pgn__checkpoint,
+.pgn__checkpoint {
+    .pgn__checkpoint-action-row {
+        .btn.btn-tertiary,
+        .btn.btn-link {
+            background: transparent;
+            color: var(--pgn-color-text-base);
+            border: 1px solid var(--pgn-color-text-base);
+            font-weight: 500;
+
+            &:hover,
+            &:focus {
+                background: var(--pgn-color-bg-light-overlay);
+                color: var(--pgn-color-text-base);
+            }
+        }
+    }
+}

@@ -687,12 +687,7 @@ a.discussion-post {
     .pgn__checkpoint-body {
         color: var(--pgn-color-text-base);
     }
-    .pgn__checkpoint-action-row {
-        .btn.btn-tertiary {
-            color: var(--pgn-color-text-base);
-            background: black;
-        }
-    }
+    // the action row is styled for both variants in paragon/_tour.scss
 }
 .pgn__modal.pgn__modal-default {
     .bg-white {

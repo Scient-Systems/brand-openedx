@@ -39,38 +39,44 @@
 }
 
 [data-paragon-theme-variant="dark"] #dashboard-container {
-    --sqa-ink: #E9EEFA;
-    --sqa-ink-soft: #8E9CC0;
-    --sqa-card-bg: #101B38;
-    --sqa-hairline: rgba(151, 170, 215, 0.14);
-    --sqa-hairline-strong: rgba(151, 170, 215, 0.26);
-    --sqa-grid-line: rgba(151, 170, 215, 0.05);
+    // Same night palette as the catalog (_catalog.scss): cards a clear step
+    // above the page, brighter secondary text, visible hairlines. The dimmer
+    // set this replaced left the ledger hard to read on the dark page.
+    --sqa-ink: #F2F5FC;
+    --sqa-ink-soft: #B8C3DD;
+    --sqa-card-bg: #17244C;
+    --sqa-hairline: rgba(190, 205, 240, 0.26);
+    --sqa-hairline-strong: rgba(190, 205, 240, 0.38);
+    --sqa-grid-line: rgba(151, 170, 215, 0.07);
     --sqa-cta-bg: #A9BC3F;
     --sqa-cta-ink: #0A1226;
     --sqa-cta-hover: #C6D465;
     --sqa-cta-shadow: rgba(169, 188, 63, 0.35);
-    --sqa-tint-olive-bg: rgba(169, 188, 63, 0.12);
+    // Tiles sit on the solid card surface like the catalog's panels; the
+    // accent stays in the ring and label. Translucent tints over the night
+    // page read as muddy olive/brown blocks.
+    --sqa-tint-olive-bg: #17244C;
     --sqa-tint-olive-ink: #C6D465;
-    --sqa-tint-viola-bg: rgba(159, 139, 255, 0.14);
+    --sqa-tint-viola-bg: #17244C;
     --sqa-tint-viola-ink: #BCABFF;
-    --sqa-tint-jade-bg: rgba(69, 196, 138, 0.12);
-    --sqa-tint-jade-ink: #45C48A;
-    --sqa-ring-track: rgba(233, 238, 250, 0.10);
+    --sqa-tint-jade-bg: #17244C;
+    --sqa-tint-jade-ink: #5BD392;
+    --sqa-ring-track: rgba(233, 238, 250, 0.18);
     --sqa-card-hover-shadow: 0 18px 44px -20px rgba(0, 0, 0, 0.55);
 }
 
 // ---------------------------------------------------------------------------
-// Atmosphere: survey grid + soft auroras on the page field
+// Atmosphere: two soft glows on a plain field. The survey grid that used to
+// sit under everything is gone: behind the cards it was noise, and the
+// catalog, which reads much better, has none.
 // ---------------------------------------------------------------------------
 
 #dashboard-container {
     padding: 20px 0 64px;
     background-image:
-        radial-gradient(90rem 30rem at 16% -8rem, rgba(169, 188, 63, 0.10), transparent 60%),
-        radial-gradient(70rem 26rem at 94% -10rem, rgba(159, 139, 255, 0.09), transparent 55%),
-        linear-gradient(var(--sqa-grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--sqa-grid-line) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+        radial-gradient(90rem 30rem at 16% -8rem, rgba(169, 188, 63, 0.08), transparent 60%),
+        radial-gradient(70rem 26rem at 94% -10rem, rgba(159, 139, 255, 0.07), transparent 55%);
+    background-size: 100% 100%, 100% 100%;
 }
 
 // ---------------------------------------------------------------------------
@@ -206,7 +212,7 @@
         margin: 0;
 
         &::before {
-            content: "COURSE LEDGER" / "";
+            content: "YOUR COURSES" / "";
             display: block;
             font-family: "JetBrains Mono", monospace;
             font-size: 10px;
@@ -350,6 +356,7 @@
         gap: 14px;
         padding: 14px 16px;
         border-radius: 18px;
+        border: 1px solid var(--sqa-hairline);
         transition: transform 0.25s ease;
 
         &:hover {
@@ -610,11 +617,13 @@
         overflow: hidden;
         padding: 22px;
         border-radius: 24px;
-        border: 1px solid rgba(151, 170, 215, 0.18);
-        color: #E9EEFA;
+        border: 1px solid rgba(190, 205, 240, 0.26);
+        color: #F2F5FC;
+        // Ends on the card surface, not the page color: it used to fade into
+        // the page at the bottom and lose its edge.
         background:
             radial-gradient(120% 90% at 85% -10%, rgba(159, 139, 255, 0.16), transparent 55%),
-            linear-gradient(180deg, #18254A 0%, #101B38 45%, #0A1226 100%);
+            linear-gradient(180deg, #1C2A56 0%, #17244C 60%, #142046 100%);
 
         // lit edge
         &::before {
@@ -965,5 +974,25 @@
         .sidebar-column #sqa-rail {
             position: static;
         }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Course row kebab menu ("Unenroll"). It opens inside the row, and the row's
+// banner strip and the next row are later siblings, so they painted over it and
+// clipped the item. The lift goes on the actions wrapper, not the menu: the
+// wrapper is centered with a transform, which makes it a stacking context, so a
+// z-index on the menu alone never escapes it. The row is lifted too, so the
+// menu also clears the next row.
+// ---------------------------------------------------------------------------
+
+#dashboard-container .course-card {
+    .pgn__card-header-actions {
+        z-index: 30;
+    }
+
+    &:has(.dropdown-menu.show) {
+        position: relative;
+        z-index: 30;
     }
 }
