@@ -5832,6 +5832,12 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
     margin-top: 20px;
   }
 }
+.course-media-wrapper {
+  --catalog-course-about-page-course-media-image-height: auto;
+}
+.course-media-wrapper .course-media-image {
+  aspect-ratio: 16/9;
+}
 [data-paragon-theme-variant=dark] #root {
   position: relative;
   z-index: 1;

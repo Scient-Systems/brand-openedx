@@ -518,3 +518,19 @@
 
     @media (max-width: 640px) { margin-top: 20px; }
 }
+
+// ---------------------------------------------------------------------------
+// Course about page: the course image at its own 16:9 shape. The MFE gives it a
+// fixed height (15.75rem, a 326x252 box on desktop) with object-fit: cover,
+// which cut the left and right edges off, and with them the title printed on
+// the image. The MFE exposes that height as a variable, so set the variable
+// rather than out-rank its stylesheet (which loads after ours).
+// ---------------------------------------------------------------------------
+
+.course-media-wrapper {
+    --catalog-course-about-page-course-media-image-height: auto;
+
+    .course-media-image {
+        aspect-ratio: 16 / 9;
+    }
+}
