@@ -168,17 +168,8 @@ div[data-testid=instructor-toolbar] {
         }
     }
 }
-.unit-navigation {
-    .previous-button {
-        border-color: var(--pgn-color-text-primary);
-        color: var(--pgn-color-text-primary) !important;
-        background: none !important;
-    }
-    .next-button {
-        background: none !important;
-        color: var(--pgn-color-primary-base) !important;
-    }
-}
+// .unit-navigation (lesson Previous/Next): styled once for both variants in
+// paragon/_overrides.scss.
 .react-loading-skeleton {
     --base-color: #36383B;
     --highlight-color: #000;

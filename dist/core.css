@@ -1287,10 +1287,38 @@ body {
   color: var(--pgn-color-primary-base) !important;
 }
 #root .sequence-container .sequence .unit-navigation {
-  max-width: 226px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
-#root .sequence-container .sequence .unit-navigation button svg, #root .sequence-container .sequence .unit-navigation a svg {
-  display: none;
+#root .sequence-container .sequence .unit-navigation button, #root .sequence-container .sequence .unit-navigation a {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+}
+.unit-navigation .next-button.btn-outline-primary {
+  background-color: #8CA12C;
+  border-color: #8CA12C;
+  color: #101A33;
+  font-weight: 600;
+}
+.unit-navigation .next-button.btn-outline-primary:hover, .unit-navigation .next-button.btn-outline-primary:focus {
+  background-color: #A9BC3F;
+  border-color: #A9BC3F;
+  color: #101A33;
+}
+.unit-navigation .previous-button.btn-outline-secondary {
+  background-color: transparent;
+  border-color: var(--pgn-color-text-primary);
+  color: var(--pgn-color-text-primary);
+}
+.unit-navigation .previous-button.btn-outline-secondary:hover, .unit-navigation .previous-button.btn-outline-secondary:focus {
+  background-color: var(--pgn-color-bg-light-overlay, rgba(255, 255, 255, 0.06));
+  color: var(--pgn-color-text-base);
 }
 #root .unit-container {
   max-width: 100% !important;
@@ -4801,9 +4829,9 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   outline-offset: 2px;
 }
 #dashboard-container .sqa-resume-art {
-  width: 88px;
-  height: 64px;
-  border-radius: 14px;
+  width: 112px;
+  height: 63px;
+  border-radius: 10px;
   background-size: cover;
   background-position: center;
   flex: 0 0 auto;
@@ -5003,12 +5031,12 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 @media (min-width: 768px) {
   #dashboard-container .course-card .pgn__card-wrapper-image-cap.horizontal {
-    width: 76px;
-    height: 76px;
-    flex: 0 0 76px;
-    min-width: 76px;
-    max-width: 76px;
-    border-radius: 14px;
+    width: 128px;
+    height: 72px;
+    flex: 0 0 128px;
+    min-width: 128px;
+    max-width: 128px;
+    border-radius: 10px;
     overflow: hidden;
     margin: 16px 0 16px 18px;
     align-self: center;
@@ -5017,7 +5045,6 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left center;
     border-radius: 0 !important;
   }
   #dashboard-container .course-card .pgn__card-body {
@@ -5333,8 +5360,8 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
     justify-content: center;
   }
   #dashboard-container .sqa-resume-art {
-    width: 56px;
-    height: 56px;
+    width: 96px;
+    height: 54px;
   }
   #dashboard-container .sqa-resume-name {
     white-space: normal;
@@ -9863,15 +9890,6 @@ p > [data-paragon-theme-variant=dark] a.muted-link[href]:not(.btn):hover, [data-
 }
 [data-paragon-theme-variant=dark] .tox-toolbar__primary .tox-tbtn svg path, [data-paragon-theme-variant=dark] .tox-toolbar__overflow .tox-tbtn svg path {
   fill: var(--pgn-color-text-base) !important;
-}
-[data-paragon-theme-variant=dark] .unit-navigation .previous-button {
-  border-color: var(--pgn-color-text-primary);
-  color: var(--pgn-color-text-primary) !important;
-  background: none !important;
-}
-[data-paragon-theme-variant=dark] .unit-navigation .next-button {
-  background: none !important;
-  color: var(--pgn-color-primary-base) !important;
 }
 [data-paragon-theme-variant=dark] .react-loading-skeleton {
   --base-color: #36383B;

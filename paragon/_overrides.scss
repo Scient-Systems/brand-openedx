@@ -369,14 +369,54 @@ body {
                     }
                 }
             }
+            // Layout only; colors are in the unit-navigation block below.
+            // The edly-era rules here hid the arrow SVGs but not their 24px
+            // slots, which pushed both labels off-center, and capped the row
+            // at 226px, which stacked Previous over Next on phones.
             .unit-navigation {
-                max-width: 226px;
+                display: flex;
+                flex-direction: row;
+                gap: 12px;
+                width: 100%;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
                 button, a {
-                    svg {
-                        display: none;
-                    }
+                    flex: 1 1 0;
+                    min-width: 0;
+                    justify-content: center;
                 }
             }
+        }
+    }
+}
+// Lesson Previous / Next, both variants. Next is the step forward, so it is
+// the site's primary action: flat olive with ink text, like the catalog's
+// Search button. Previous stays a quiet outline in the page's text color.
+.unit-navigation {
+    .next-button.btn-outline-primary {
+        background-color: #8CA12C;
+        border-color: #8CA12C;
+        color: #101A33;
+        font-weight: 600;
+
+        &:hover,
+        &:focus {
+            background-color: #A9BC3F;
+            border-color: #A9BC3F;
+            color: #101A33;
+        }
+    }
+
+    .previous-button.btn-outline-secondary {
+        background-color: transparent;
+        border-color: var(--pgn-color-text-primary);
+        color: var(--pgn-color-text-primary);
+
+        &:hover,
+        &:focus {
+            background-color: var(--pgn-color-bg-light-overlay, rgba(255, 255, 255, 0.06));
+            color: var(--pgn-color-text-base);
         }
     }
 }

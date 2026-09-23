@@ -288,9 +288,10 @@
     }
 
     .sqa-resume-art {
-        width: 88px;
-        height: 64px;
-        border-radius: 14px;
+        // 16:9 like the course image itself, so nothing is cropped
+        width: 112px;
+        height: 63px;
+        border-radius: 10px;
         background-size: cover;
         background-position: center;
         flex: 0 0 auto;
@@ -537,14 +538,16 @@
     // matching the MFE's isCollapsed switch to the vertical card.
     @media (min-width: 768px) {
         .course-card {
+            // 16:9, the shape course images are made in (and how the catalog
+            // shows them). A square crop cut the title printed on the image.
             .pgn__card-wrapper-image-cap.horizontal {
-                width: 76px;
-                height: 76px;
-                flex: 0 0 76px;
+                width: 128px;
+                height: 72px;
+                flex: 0 0 128px;
                 // Paragon gives horizontal image caps a 240px min-width
-                min-width: 76px;
-                max-width: 76px;
-                border-radius: 14px;
+                min-width: 128px;
+                max-width: 128px;
+                border-radius: 10px;
                 overflow: hidden;
                 margin: 16px 0 16px 18px;
                 align-self: center;
@@ -553,8 +556,6 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    // course cards carry their title on the left; keep it in frame
-                    object-position: left center;
                     border-radius: 0 !important;
                 }
             }
@@ -958,8 +959,8 @@
         }
 
         .sqa-resume-art {
-            width: 56px;
-            height: 56px;
+            width: 96px;
+            height: 54px;
         }
 
         .sqa-resume-name {
