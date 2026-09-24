@@ -76,7 +76,7 @@
         "actions": {
           "default": "{color.brand.base}"
         },
-        "$description": "Brand color, dark theme \u2014 Meridian ember CTAs on night (ink text)."
+        "$description": "Brand color, dark theme — Meridian ember CTAs on night (ink text)."
       }
     },
     "text": {
@@ -143,7 +143,7 @@
         "actions": {
           "default": "{color.body.bg}"
         },
-        "$description": "Body background, dark theme \u2014 Meridian midnight."
+        "$description": "Body background, dark theme — Meridian midnight."
       },
       "base": {
         "$value": "{color.text.base}",
@@ -158,7 +158,7 @@
         "actions": {
           "default": "{color.body.bg}"
         },
-        "$description": "Header background, dark theme \u2014 Meridian abyss."
+        "$description": "Header background, dark theme — Meridian abyss."
       }
     },
     "accent": {
@@ -267,6 +267,72 @@
         "success": {
           "$value": "{color.success.500}"
         }
+      }
+    },
+    "navbar": {
+      "light": {
+        "text": {
+          "$value": "#B3BFDC",
+          "$description": "Navbar link text (navbar-light) on the night page."
+        },
+        "hover": {
+          "$value": "#F2F5FC",
+          "$description": "Navbar link hover."
+        },
+        "active": {
+          "$value": "#F2F5FC",
+          "$description": "Active navbar link."
+        },
+        "disabled": {
+          "$value": "rgba(233, 238, 250, 0.42)",
+          "$description": "Disabled navbar link."
+        }
+      }
+    },
+    "nav-link": {
+      "text": {
+        "base": {
+          "$value": "#B3BFDC",
+          "$description": "Plain nav link text (e.g. the header Help link)."
+        }
+      }
+    },
+    "sqa": {
+      "text-primary-500": {
+        "$value": "#C2CDE8",
+        "$description": "Readable value for text-primary-500 text. In dark the primary scale is surface navy."
+      },
+      "text-primary-600": {
+        "$value": "#D5DCEE",
+        "$description": "Readable value for text-primary-600 text."
+      },
+      "text-primary-700": {
+        "$value": "#D5DCEE",
+        "$description": "Readable value for text-primary-700 text."
+      },
+      "text-primary-800": {
+        "$value": "#E9EEFA",
+        "$description": "Readable value for text-primary-800 text."
+      },
+      "text-primary-900": {
+        "$value": "#E9EEFA",
+        "$description": "Readable value for text-primary-900 text."
+      },
+      "staffbar-bg": {
+        "$value": "#18254A",
+        "$description": "Staff bar (\"View this course as\") background."
+      },
+      "staffbar-text": {
+        "$value": "#E9EEFA",
+        "$description": "Staff bar text."
+      },
+      "staffbar-btn": {
+        "$value": "#BCABFF",
+        "$description": "Staff bar outline button text and border."
+      },
+      "staffbar-btn-hover-text": {
+        "$value": "#0A1226",
+        "$description": "Staff bar button text on hover fill."
       }
     }
   }

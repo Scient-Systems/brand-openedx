@@ -715,7 +715,8 @@
             }
         }
         // Re-point the token the utility reads, rather than out-!important it.
-        .notification-button {
+        .notification-button,
+        .notification-button .text-primary-500 {
             --pgn-color-primary-500: #E9EEFA;
             --pgn-color-action-default-primary-500: #FFFFFF;
         }

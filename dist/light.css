@@ -661,6 +661,15 @@
   --pgn-color-info-base: #5A41C4FF;
   --pgn-color-light-base: #E1DDDBFF;
   --pgn-color-dark-base: #273F2FFF;
+  --pgn-color-sqa-text-primary-500: #101A33FF;
+  --pgn-color-sqa-text-primary-600: #0E172EFF;
+  --pgn-color-sqa-text-primary-700: #0D1529FF;
+  --pgn-color-sqa-text-primary-800: #0C1426FF;
+  --pgn-color-sqa-text-primary-900: #0B1224FF;
+  --pgn-color-sqa-staffbar-bg: #101A33FF;
+  --pgn-color-sqa-staffbar-text: #FFFFFFFF;
+  --pgn-color-sqa-staffbar-btn: #FFFFFFFF;
+  --pgn-color-sqa-staffbar-btn-hover-text: #101A33FF;
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;

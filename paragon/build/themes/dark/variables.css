@@ -29,6 +29,20 @@
   --pgn-color-gray-200: #C2CDE8FF; /** Gray color of level 200. */
   --pgn-color-gray-500: #8E9CC0FF; /** Gray color of level 500. */
   --pgn-color-black: #000000FF;
+  --pgn-color-navbar-light-text: #B3BFDCFF; /** Navbar link text (navbar-light) on the night page. */
+  --pgn-color-navbar-light-hover: #F2F5FCFF; /** Navbar link hover. */
+  --pgn-color-navbar-light-active: #F2F5FCFF; /** Active navbar link. */
+  --pgn-color-navbar-light-disabled: #E9EEFA6B; /** Disabled navbar link. */
+  --pgn-color-nav-link-text-base: #B3BFDCFF; /** Plain nav link text (e.g. the header Help link). */
+  --pgn-color-sqa-text-primary-500: #C2CDE8FF; /** Readable value for text-primary-500 text. In dark the primary scale is surface navy. */
+  --pgn-color-sqa-text-primary-600: #D5DCEEFF; /** Readable value for text-primary-600 text. */
+  --pgn-color-sqa-text-primary-700: #D5DCEEFF; /** Readable value for text-primary-700 text. */
+  --pgn-color-sqa-text-primary-800: #E9EEFAFF; /** Readable value for text-primary-800 text. */
+  --pgn-color-sqa-text-primary-900: #E9EEFAFF; /** Readable value for text-primary-900 text. */
+  --pgn-color-sqa-staffbar-bg: #18254AFF; /** Staff bar ("View this course as") background. */
+  --pgn-color-sqa-staffbar-text: #E9EEFAFF; /** Staff bar text. */
+  --pgn-color-sqa-staffbar-btn: #BCABFFFF; /** Staff bar outline button text and border. */
+  --pgn-color-sqa-staffbar-btn-hover-text: #0A1226FF; /** Staff bar button text on hover fill. */
   --pgn-color-form-control-indicator-border: #C4C7CFFF;
   --pgn-course-card-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0px 4px 6px -2px rgba(255, 255, 255, 0.15), 0px 10px 15px -3px rgba(255, 255, 255, 0.15);
   --pgn-elevation-box-shadow-base: var(--pgn-elevation-box-shadow-level-2);

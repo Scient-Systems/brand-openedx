@@ -661,6 +661,15 @@
   --pgn-color-info-base: #5A41C4FF; /** Info color — Grove viola. */
   --pgn-color-light-base: #E1DDDBFF; /** Basic light color. */
   --pgn-color-dark-base: #273F2FFF; /** Basic dark color. */
+  --pgn-color-sqa-text-primary-500: #101A33FF; /** Same as primary-500: light mode is unchanged. */
+  --pgn-color-sqa-text-primary-600: #0E172EFF; /** Same as primary-600. */
+  --pgn-color-sqa-text-primary-700: #0D1529FF; /** Same as primary-700. */
+  --pgn-color-sqa-text-primary-800: #0C1426FF; /** Same as primary-800. */
+  --pgn-color-sqa-text-primary-900: #0B1224FF; /** Same as primary-900. */
+  --pgn-color-sqa-staffbar-bg: #101A33FF; /** Staff bar background (light: navy, as before). */
+  --pgn-color-sqa-staffbar-text: #FFFFFFFF; /** Staff bar text. */
+  --pgn-color-sqa-staffbar-btn: #FFFFFFFF; /** Staff bar outline button text and border. */
+  --pgn-color-sqa-staffbar-btn-hover-text: #101A33FF; /** Staff bar button text on hover fill. */
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;

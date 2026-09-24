@@ -70,6 +70,44 @@
         "source": "$body-bg",
         "$description": "Body background — Meridian frost."
       }
+    },
+    "sqa": {
+      "text-primary-500": {
+        "$value": "#101A33",
+        "$description": "Same as primary-500: light mode is unchanged."
+      },
+      "text-primary-600": {
+        "$value": "#0E172E",
+        "$description": "Same as primary-600."
+      },
+      "text-primary-700": {
+        "$value": "#0D1529",
+        "$description": "Same as primary-700."
+      },
+      "text-primary-800": {
+        "$value": "#0C1426",
+        "$description": "Same as primary-800."
+      },
+      "text-primary-900": {
+        "$value": "#0B1224",
+        "$description": "Same as primary-900."
+      },
+      "staffbar-bg": {
+        "$value": "#101A33",
+        "$description": "Staff bar background (light: navy, as before)."
+      },
+      "staffbar-text": {
+        "$value": "#FFFFFF",
+        "$description": "Staff bar text."
+      },
+      "staffbar-btn": {
+        "$value": "#FFFFFF",
+        "$description": "Staff bar outline button text and border."
+      },
+      "staffbar-btn-hover-text": {
+        "$value": "#101A33",
+        "$description": "Staff bar button text on hover fill."
+      }
     }
   },
   "course": {
