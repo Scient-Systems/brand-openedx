@@ -357,6 +357,40 @@
       "ring-glow": {
         "$value": "rgba(169, 188, 63, 0.55)",
         "$description": "Ring glow (none in light mode)."
+      },
+      "surface-card": {
+        "$value": "#1E2E5C",
+        "$description": "Card surface: a clear step above the #0A1226 page (1.42:1), text stays >= 4.8:1."
+      },
+      "surface-inset": {
+        "$value": "#16244B",
+        "$description": "Recessed band inside a card (footers, table heads): darker than the card, lighter than the page."
+      },
+      "card-border": {
+        "$value": "rgba(190, 205, 240, 0.30)",
+        "$description": "Card hairline."
+      },
+      "card-shadow": {
+        "$value": "rgba(0, 0, 0, 0.55)",
+        "$description": "Card drop shadow color."
+      },
+      "card-edge": {
+        "$value": "rgba(233, 238, 250, 0.08)",
+        "$description": "Lit top edge inside a card (light source top-left)."
+      }
+    },
+    "card": {
+      "bg": {
+        "base": {
+          "$value": "{color.sqa.surface-card}",
+          "$description": "Cards use the sqa card surface."
+        }
+      },
+      "border": {
+        "base": {
+          "$value": "{color.sqa.card-border}",
+          "$description": "Cards use the sqa hairline."
+        }
       }
     }
   }

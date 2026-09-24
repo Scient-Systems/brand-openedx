@@ -427,9 +427,10 @@ a.muted-link {
   background-color: var(--pgn-color-body-bg);
 }
 
+// Cards sit a step above the page (sqa surface tokens), never on the page color.
 .pgn__card {
-  background-color: var(--pgn-color-body-bg);
-  border: 1px solid var(--pgn-color-light-base);
+  background-color: var(--pgn-color-card-bg-base);
+  border: 1px solid var(--pgn-color-card-border-base);
 }
 
 a.brand-link {

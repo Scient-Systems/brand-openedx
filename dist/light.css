@@ -676,6 +676,11 @@
   --pgn-color-sqa-ring-fill: #8CA12CFF;
   --pgn-color-sqa-ring-track: #101A331A;
   --pgn-color-sqa-ring-glow: #8CA12C00;
+  --pgn-color-sqa-surface-card: #FFFFFFFF;
+  --pgn-color-sqa-surface-inset: #F5F6EEFF;
+  --pgn-color-sqa-card-border: #101A3324;
+  --pgn-color-sqa-card-shadow: #101A3329;
+  --pgn-color-sqa-card-edge: #FFFFFF00;
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;
@@ -817,7 +822,8 @@
   --pgn-color-btn-disabled-border-inverse-secondary: var(--pgn-color-btn-border-inverse-secondary);
   --pgn-color-btn-disabled-border-tertiary: var(--pgn-color-btn-border-tertiary);
   --pgn-color-btn-disabled-border-inverse-tertiary: var(--pgn-color-btn-border-inverse-tertiary);
-  --pgn-color-card-border-base: #00000020;
+  --pgn-color-card-bg-base: var(--pgn-color-sqa-surface-card);
+  --pgn-color-card-border-base: #101A3320;
   --pgn-color-carousel-control-base: var(--pgn-color-white);
   --pgn-color-carousel-indicator-active-bg: var(--pgn-color-white);
   --pgn-color-carousel-caption: var(--pgn-color-white);
@@ -1281,7 +1287,6 @@
   --pgn-color-btn-disabled-border-outline-secondary: var(--pgn-color-secondary-base);
   --pgn-color-btn-disabled-border-inverse-outline-secondary: var(--pgn-color-btn-border-inverse-outline-secondary);
   --pgn-color-btn-disabled-border-inverse-outline-warning: var(--pgn-color-btn-border-inverse-outline-warning);
-  --pgn-color-card-bg-base: var(--pgn-color-bg-base);
   --pgn-color-card-bg-dark: var(--pgn-color-primary-500);
   --pgn-color-card-bg-muted: var(--pgn-color-light-200);
   --pgn-color-card-border-focus-base: var(--pgn-color-primary-500);

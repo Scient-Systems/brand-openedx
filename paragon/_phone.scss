@@ -1,0 +1,106 @@
+// ============================================================================
+// Phone layout (< 768px): headers. Dashboard phone rules live in the
+// Responsive block of _dashboard.scss. Everything here fixes something that broke at
+// phone width; desktop layout is untouched. Imported ONLY by _overrides.scss
+// (theme-neutral: colors come from tokens).
+// ============================================================================
+
+@media (max-width: 767.98px) {
+    // ---- Headers -------------------------------------------------------------
+    // The logo image was 48px tall inside a 28px link, so it hung below a 48px
+    // header. Size the image to the bar and center it.
+    #root header.site-header-mobile,
+    #root header.learning-header {
+        .logo {
+            display: flex;
+            align-items: center;
+            height: auto;
+
+            img {
+                height: 36px;
+                width: auto;
+            }
+        }
+    }
+
+    #root header.site-header-mobile {
+        min-height: 60px;
+        padding: 0 12px;
+
+        // menu and account buttons: rounded, inset from the edge, not flush boxes
+        .menu-trigger.icon-button {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    // Course header: the course number line and the sun/moon glyphs took the
+    // room the title needs ("Generati..."). Keep the switch, drop the glyphs,
+    // and let the title use two lines.
+    #root header.learning-header {
+        .container-xl {
+            gap: 8px;
+        }
+
+        .logo {
+            margin: 0 !important;
+        }
+
+        .course-title-lockup {
+            .small {
+                display: none !important;
+            }
+
+            .course-title {
+                white-space: normal;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                line-height: 1.2;
+                font-size: 15px;
+            }
+        }
+
+        .theme-toggle-button {
+            margin-right: 4px !important;
+
+            .light-theme-icon,
+            .dark-theme-icon {
+                display: none;
+            }
+        }
+
+        .user-dropdown {
+            margin-left: 4px !important;
+        }
+    }
+
+    // Staff "View as" bar: label on its own line, input takes the rest of
+    // the row next to Submit (it was squeezed to "Use...").
+    form.masquerade-bar {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 4px;
+
+        .masquerade-form-label {
+            flex: 0 0 100%;
+            margin: 0;
+        }
+
+        .masquerade-form-input {
+            flex: 1 1 0;
+            min-width: 0;
+            margin: 0;
+        }
+
+        .btn {
+            margin: 0 !important;
+        }
+    }
+}

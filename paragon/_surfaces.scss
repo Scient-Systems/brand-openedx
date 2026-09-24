@@ -1,0 +1,22 @@
+// ============================================================================
+// Surfaces: one card look everywhere.
+//
+// Paragon cards take their fill and hairline from the card tokens, which point
+// at --pgn-color-sqa-surface-card / -card-border (tokens/src/themes/*). This
+// file only adds what tokens can't: the resting shadow and the radius. Section
+// files that draw their own cards (dashboard, catalog, progress, outline) use
+// the same recipe through the sqa-card-surface mixin in _variables.scss.
+//
+// Imported ONLY by _overrides.scss (theme-neutral via tokens).
+// ============================================================================
+
+.pgn__card {
+    border-radius: $sqa-card-radius;
+    box-shadow: $sqa-card-shadow;
+}
+
+// Recessed status rows inside a card. Not footers: MFEs often render an empty
+// footer, which would show up as a bare strip.
+.pgn__card .pgn__card-status:not(:empty) {
+    background-color: var(--pgn-color-sqa-surface-inset);
+}

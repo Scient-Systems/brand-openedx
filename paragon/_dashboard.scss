@@ -18,8 +18,10 @@
 #dashboard-container {
     --sqa-ink: #101A33;
     --sqa-ink-soft: #4F5E7E;
-    --sqa-card-bg: #FFF;
-    --sqa-hairline: rgba(16, 26, 51, 0.10);
+    // surfaces come from the shared sqa tokens (see $sqa-card-shadow)
+    --sqa-card-bg: var(--pgn-color-sqa-surface-card);
+    --sqa-hairline: var(--pgn-color-sqa-card-border);
+    --sqa-card-rest-shadow: #{$sqa-card-shadow};
     --sqa-hairline-strong: rgba(16, 26, 51, 0.18);
     --sqa-grid-line: rgba(16, 26, 51, 0.035);
     --sqa-olive: #8CA12C;
@@ -28,11 +30,13 @@
     --sqa-cta-ink: #101A33;
     --sqa-cta-hover: #A9BC3F;
     --sqa-cta-shadow: rgba(140, 161, 44, 0.45);
-    --sqa-tint-olive-bg: #ECEFDA;
+    // Tiles are cards like every other card; the accent lives in the ring and
+    // label. Pastel tints were 1.05:1 against the frost page and vanished.
+    --sqa-tint-olive-bg: var(--sqa-card-bg);
     --sqa-tint-olive-ink: #596818; // olive-650 family, ≥4.5:1 on the tint at microlabel sizes
-    --sqa-tint-viola-bg: #EBE6FF;
+    --sqa-tint-viola-bg: var(--sqa-card-bg);
     --sqa-tint-viola-ink: #5A41C4;
-    --sqa-tint-jade-bg: #E2F6EC;
+    --sqa-tint-jade-bg: var(--sqa-card-bg);
     --sqa-tint-jade-ink: #156B39; // deep jade, ≥4.5:1 on the tint at microlabel sizes
     --sqa-ring-track: rgba(16, 26, 51, 0.08);
     --sqa-card-hover-shadow: 0 18px 44px -22px rgba(16, 26, 51, 0.30);
@@ -44,8 +48,8 @@
     // set this replaced left the ledger hard to read on the dark page.
     --sqa-ink: #F2F5FC;
     --sqa-ink-soft: #B8C3DD;
-    --sqa-card-bg: #17244C;
-    --sqa-hairline: rgba(190, 205, 240, 0.26);
+    --sqa-card-bg: var(--pgn-color-sqa-surface-card);
+    --sqa-hairline: var(--pgn-color-sqa-card-border);
     --sqa-hairline-strong: rgba(190, 205, 240, 0.38);
     --sqa-grid-line: rgba(151, 170, 215, 0.07);
     --sqa-cta-bg: #A9BC3F;
@@ -55,11 +59,11 @@
     // Tiles sit on the solid card surface like the catalog's panels; the
     // accent stays in the ring and label. Translucent tints over the night
     // page read as muddy olive/brown blocks.
-    --sqa-tint-olive-bg: #17244C;
+    --sqa-tint-olive-bg: var(--sqa-card-bg);
     --sqa-tint-olive-ink: #C6D465;
-    --sqa-tint-viola-bg: #17244C;
+    --sqa-tint-viola-bg: var(--sqa-card-bg);
     --sqa-tint-viola-ink: #BCABFF;
-    --sqa-tint-jade-bg: #17244C;
+    --sqa-tint-jade-bg: var(--sqa-card-bg);
     --sqa-tint-jade-ink: #5BD392;
     --sqa-ring-track: rgba(233, 238, 250, 0.18);
     --sqa-card-hover-shadow: 0 18px 44px -20px rgba(0, 0, 0, 0.55);
@@ -270,6 +274,7 @@
         border-radius: 24px;
         border: 1px solid var(--sqa-hairline);
         background: var(--sqa-card-bg);
+        box-shadow: var(--sqa-card-rest-shadow);
         text-decoration: none;
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 
@@ -358,6 +363,7 @@
         padding: 14px 16px;
         border-radius: 18px;
         border: 1px solid var(--sqa-hairline);
+        box-shadow: var(--sqa-card-rest-shadow);
         transition: transform 0.25s ease;
 
         &:hover {
@@ -456,7 +462,7 @@
             border-radius: 18px;
             border: 1px solid var(--sqa-hairline);
             background: var(--sqa-card-bg);
-            box-shadow: none;
+            box-shadow: var(--sqa-card-rest-shadow);
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 
             // meridian tick that lights up on hover
@@ -778,6 +784,7 @@
         border-radius: 18px;
         border: 1px solid var(--sqa-hairline);
         background: var(--sqa-card-bg);
+        box-shadow: var(--sqa-card-rest-shadow);
         text-decoration: none;
         transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 
@@ -945,12 +952,56 @@
 
 @media (max-width: 767.98px) {
     #dashboard-container {
+        // Three stats side by side (compact, ring over label) instead of
+        // three full-width rows that pushed the courses off the first screen.
         .sqa-stats {
-            grid-template-columns: 1fr;
+            gap: 8px;
         }
 
+        .sqa-stat {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+            padding: 14px 6px 12px;
+        }
+
+        .sqa-stat-dial {
+            width: 48px;
+            height: 48px;
+        }
+
+        .sqa-stat-meta {
+            align-items: center;
+        }
+
+        .sqa-stat-label {
+            letter-spacing: 0.08em;
+            font-size: 9.5px;
+        }
+
+        .sqa-stat-sub {
+            font-size: 12px;
+        }
+
+        // Course images at their real 16:9 shape; a fixed 145px height cut
+        // off the bottom of the art.
+        .course-card .pgn__card-wrapper-image-cap {
+            height: auto !important;
+
+            .pgn__card-image-cap {
+                height: auto !important;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+            }
+        }
+
+        // The thumbnail is 96px wide; its column was 56px, so it covered the
+        // title. The button takes the full next row.
         .sqa-resume {
-            grid-template-columns: 56px minmax(0, 1fr);
+            grid-template-columns: 96px minmax(0, 1fr);
+            gap: 14px;
+            padding: 16px;
 
             .sqa-btn {
                 grid-column: 1 / -1;

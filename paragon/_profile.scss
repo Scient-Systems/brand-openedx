@@ -138,11 +138,9 @@
                 display: none;
             }
             .pgn-transition-replace-group {
-                border: 1px solid #E5E7EB;
-                border-left: 8px solid var(--pgn-color-primary-light);
+                @include sqa-card-surface;
                 padding: 15px !important;
                 margin: 0 0 15px !important;
-                border-radius: 8px;
                 font-size: 14px;
                 color: var(--pgn-color-text-base);
                 .col-sm-6.d-flex.align-items-stretch {

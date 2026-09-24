@@ -12,17 +12,17 @@
     >.row {
         >.col-12.col-md-8.p-0 {
             .rounded.raised-card {
-                border: 1px solid #E5E7EB !important;
-                border-left: 8px solid var(--pgn-color-primary-light) !important;
-                border-radius: 8px !important;
-                box-shadow: none !important;
+                @include sqa-card-surface(true);
+                border-radius: $sqa-card-radius !important;
                 font-size: 16px;
                 .small {
                     font-size: 16px;
                 }
                 &.grades {
+                    // a wrapper: the tables inside are the cards
+                    background-color: transparent !important;
                     border: none !important;
-                    border-radius: none !important;
+                    box-shadow: none !important;
                     padding: 0 !important;
                     .btn-icon.btn-icon-primary.btn-icon-sm {
                         width: auto;
@@ -36,7 +36,9 @@
                 }
                 .bg-warning-100 {
                     padding: 10px 15px !important;
-                    background: var(--pgn-color-primary-light) !important;
+                    background: var(--pgn-color-sqa-surface-inset) !important;
+                    border-top: 1px solid var(--pgn-color-sqa-card-border);
+                    border-radius: 0 0 ($sqa-card-radius - 1px) ($sqa-card-radius - 1px);
                     .h4 {
                         font-size: 14px;
                         color: var(--pgn-color-primary-base);
@@ -50,8 +52,7 @@
         }
         >.col-12.col-md-4.p-0.px-md-4, >.col-12.col-md-8.p-0 {
             .bg-light-200.raised-card {
-                background: var(--pgn-color-primary-light) !important;
-                box-shadow: none !important;
+                @include sqa-card-surface(true);
                 .pgn__card-header {
                     .pgn__card-header-content {
                         margin-top: 10px;
@@ -79,9 +80,8 @@
                 }
             } 
             section.mb-4.x-small {
-                background-color: var(--pgn-color-primary-light);
+                @include sqa-card-surface;
                 font-size: 16px !important;
-                border-radius: 8px;
                 padding: 20px;
                 ul {
                     list-style: none;
@@ -95,8 +95,9 @@
     .donut-ring.complete-stroke, .donut-segment.complete-stroke, .donut-hole.complete-stroke {
         stroke: var(--pgn-color-primary-base);
     }
+    // the unfilled part of the ring: the instrument track, visible on the card
     .donut-ring.incomplete-stroke, .donut-segment.incomplete-stroke, .donut-hole.incomplete-stroke {
-        stroke: var(--pgn-color-primary-light);
+        stroke: var(--pgn-color-sqa-ring-track);
     }
     svg.donut {
         @media (--pgn-size-breakpoint-min-width-sm) {
@@ -108,11 +109,11 @@
             color: var(--pgn-color-text-base);
         }
         .donut-chart-label {
-            color: #4B5563;
+            color: var(--pgn-color-text-primary);
         }
     }
     .grade-bar .grade-bar__base {
-        fill: var(--pgn-color-primary-light);
+        fill: var(--pgn-color-sqa-ring-track);
     }
 }
 #root {
@@ -121,7 +122,7 @@
             thead {
                 th {
                     background: none !important;
-                    border-bottom: 1px solid #E5E7EB !important;
+                    border-bottom: 1px solid var(--pgn-color-sqa-card-border) !important;
                     span.h5 {
                         font-size: 14px;
                         font-weight: 500;
@@ -133,10 +134,9 @@
             }
         }
         .pgn__data-table-wrapper {
-            border: 1px solid #E5E7EB !important;
-            border-left: 8px solid var(--pgn-color-primary-light) !important;
-            border-radius: 8px !important;
-            box-shadow: none !important;
+            @include sqa-card-surface(true);
+            border-radius: $sqa-card-radius !important;
+            overflow: hidden;
             .border-primary {
                 border-color: transparent !important;
             }
@@ -151,7 +151,9 @@
         }
     }
 }
-#non-passing-grade-tooltip {
+// .popover# beats the MFE's own #non-passing-grade-tooltip yellow, which put
+// white text on #FFEE88 (1.2:1) in light mode.
+.popover#non-passing-grade-tooltip {
     background: var(--pgn-color-primary-base);
     border-color: var(--pgn-color-primary-base);
     filter: none;
@@ -167,19 +169,21 @@
         color: white !important;
     }
 }
-#minimum-grade-tooltip.bg-primary-500 {
-    background: #9CA3AF !important;
-    border-color: #9CA3AF !important;
+// "Passing grade" bubble. White on #9CA3AF was 2.54:1. Text-primary as the
+// fill with the page color as its text reads in both themes.
+.popover#minimum-grade-tooltip.bg-primary-500 {
+    background: var(--pgn-color-text-primary) !important;
+    border-color: var(--pgn-color-text-primary) !important;
     filter: none;
     .arrow {
         &:before {
-            border-bottom-color: #9CA3AF !important;
+            border-bottom-color: var(--pgn-color-text-primary) !important;
         }
         &:after {
-            border-bottom-color: #9CA3AF !important;
+            border-bottom-color: var(--pgn-color-text-primary) !important;
         }
     }
     .popover-body {
-        color: white !important;
+        color: var(--pgn-color-body-bg) !important;
     }
 }

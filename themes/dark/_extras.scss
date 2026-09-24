@@ -559,11 +559,6 @@ footer.tutor-container .copyright-site {
     }
 }
 #courseHome-outline {
-    .pgn_collapsible {
-        border: 1px solid var(--pgn-color-primary-light);
-        border-left: 8px solid var(--pgn-color-primary-light);
-        background: none !important;
-    }
     .collapsible-trigger {
         .btn-icon-primary {
             &:hover, &:active, &:focus {
@@ -657,10 +652,11 @@ a.discussion-post {
             border: 1px solid #D1D5DB !important;
             color: var(--pgn-color-text-base) !important;
             background: transparent !important;
+            // same olive brand button as everywhere else (ink on olive)
             &.btn-brand {
-                color: var(--pgn-color-text-button) !important;
-                background: var(--pgn-color-primary-base) !important;
-                border-color: var(--pgn-color-primary-base) !important;
+                color: #101A33 !important;
+                background: #8CA12C !important;
+                border-color: transparent !important;
             }
             &.btn-danger {
                 background: var(--pgn-color-danger-base) !important;
@@ -901,12 +897,8 @@ a.discussion-post {
         }
     }
     .pgn-transition-replace-group + .form-group {
-        border: 1px solid var(--pgn-color-primary-light);
-        border-left: 8px solid var(--pgn-color-primary-light);
     }
     .pgn-transition-replace-group {
-        border: 1px solid var(--pgn-color-primary-light);
-        border-left: 8px solid var(--pgn-color-primary-light);
         .form-group {
             .d-flex.align-items-start {
                 button {
@@ -962,8 +954,6 @@ a.discussion-post {
     .container-fluid {
         .row {
             .pgn-transition-replace-group {
-                border: 1px solid var(--pgn-color-primary-light);
-                border-left: 8px solid var(--pgn-color-primary-light);
                 .col-sm-6.d-flex.align-items-stretch {
                     .card-body {
                         a.default-link {
@@ -1026,8 +1016,6 @@ svg {
     >.row {
         >.col-12.col-md-8.p-0 {
             .rounded.raised-card {
-                border: 1px solid var(--pgn-color-primary-light) !important;
-                border-left: 8px solid var(--pgn-color-primary-light) !important;
                 &.grades {
                     border: none !important;
                     .btn-icon.btn-icon-primary {
@@ -1043,9 +1031,6 @@ svg {
                     color: var(--pgn-color-text-button);
                     background: var(--pgn-color-primary-base);
                 }
-            }
-            section.mb-4.x-small {
-                background-color: var(--pgn-color-primary-light);
             }
         }
     }
@@ -1070,11 +1055,6 @@ svg {
                 background: none !important;
             }
         }
-        .pgn__data-table-wrapper {
-            border: 1px solid var(--pgn-color-primary-light) !important;
-            border-left: 8px solid var(--pgn-color-primary-light) !important;
-            background: none;
-        }
     }
 }
 #non-passing-grade-tooltip {
@@ -1082,22 +1062,7 @@ svg {
         color: white !important;
     }
 }
-#minimum-grade-tooltip.bg-primary-500 {
-    background: #9CA3AF !important;
-    border-color: #9CA3AF !important;
-    filter: none;
-    .arrow {
-        &:before {
-            border-bottom-color: #9CA3AF !important;
-        }
-        &:after {
-            border-bottom-color: #9CA3AF !important;
-        }
-    }
-    .popover-body {
-        color: white !important;
-    }
-}
+// minimum-grade tooltip: styled for both themes in paragon/_progress.scss
 
 // Discussion style
 

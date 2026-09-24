@@ -41,9 +41,10 @@
             font-weight: 500;
             border: 1px solid #D1D5DB;
             margin: 0 10px;
+            // "Begin tour" is the standard olive brand button (_overrides.scss).
+            // Painting it primary-base put ink text on an ink fill in light mode.
             &.btn-brand {
-                background: var(--pgn-color-primary-base) !important;
-                border-color: var(--pgn-color-primary-base) !important;
+                border-color: transparent;
             }
         }
     }

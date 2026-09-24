@@ -3,7 +3,7 @@
     "card": {
       "border": {
         "base": {
-          "$value": "{color.light.base}"
+          "$value": "{color.sqa.card-border}"
         }
       }
     }

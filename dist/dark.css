@@ -75,6 +75,11 @@
   --pgn-color-sqa-ring-fill: #A9BC3FFF;
   --pgn-color-sqa-ring-track: #E9EEFA24;
   --pgn-color-sqa-ring-glow: #A9BC3F8C;
+  --pgn-color-sqa-surface-card: #1E2E5CFF;
+  --pgn-color-sqa-surface-inset: #16244BFF;
+  --pgn-color-sqa-card-border: #BECDF04D;
+  --pgn-color-sqa-card-shadow: #0000008C;
+  --pgn-color-sqa-card-edge: #E9EEFA14;
   --pgn-color-form-control-indicator-border: #C4C7CFFF;
   --pgn-course-card-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0px 4px 6px -2px rgba(255, 255, 255, 0.15), 0px 10px 15px -3px rgba(255, 255, 255, 0.15);
   --pgn-elevation-box-shadow-base: var(--pgn-elevation-box-shadow-level-2);
@@ -92,7 +97,7 @@
   --pgn-color-bg-info: var(--pgn-color-primary-light);
   --pgn-color-body-base: var(--pgn-color-text-base);
   --pgn-color-accent-a: var(--pgn-color-primary-base);
-  --pgn-color-white: var(--pgn-color-body-bg); /** Header background color Profile page. */
+  --pgn-color-white: var(--pgn-color-body-bg);
   --pgn-color-toast-bg: var(--pgn-color-primary-light);
   --pgn-color-toast-border: var(--pgn-color-text-base);
   --pgn-color-border: var(--pgn-color-text-base);
@@ -100,6 +105,8 @@
   --pgn-color-stepper-header-bg-line: var(--pgn-color-gray-500);
   --pgn-color-dropzone-border-base: var(--pgn-color-primary-500);
   --pgn-color-badge-bg-success: var(--pgn-color-success-500);
+  --pgn-color-card-bg-base: var(--pgn-color-sqa-surface-card); /** Cards use the sqa card surface. */
+  --pgn-color-card-border-base: var(--pgn-color-sqa-card-border);
   --pgn-color-icon-button-bg-primary-hover: var(--pgn-color-primary-base);
   --pgn-color-icon-button-text-primary-focus: var(--pgn-color-primary-base);
   --pgn-color-btn-border-inverse-outline-primary: var(--pgn-color-primary-base);
@@ -115,7 +122,6 @@
   --pgn-color-btn-hover-bg-primary: var(--pgn-color-primary-base);
   --pgn-color-btn-hover-border-outline-primary: var(--pgn-color-primary-border);
   --pgn-color-btn-hover-border-primary: var(--pgn-color-primary-base);
-  --pgn-color-card-border-base: var(--pgn-color-light-base);
   --pgn-color-chip-border-base: var(--pgn-color-light-base);
   --pgn-color-dropdown-border: var(--pgn-color-text-base);
   --pgn-color-dropdown-bg: var(--pgn-color-body-bg);
