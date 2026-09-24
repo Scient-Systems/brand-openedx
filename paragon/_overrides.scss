@@ -539,6 +539,7 @@ body {
 @import "./extras";
 @import "./dashboard";
 @import "./catalog";   // Verawood Catalog MFE. NOT in _dark.scss -- self-manages dark, like dashboard.
+@import "./grove";     // Certificate visual language. NOT in _dark.scss -- theme-neutral via sqa tokens.
 
 
 // ---------------------------------------------------------------------------

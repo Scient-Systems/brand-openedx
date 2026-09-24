@@ -43,6 +43,12 @@
   --pgn-color-sqa-staffbar-text: #E9EEFAFF; /** Staff bar text. */
   --pgn-color-sqa-staffbar-btn: #BCABFFFF; /** Staff bar outline button text and border. */
   --pgn-color-sqa-staffbar-btn-hover-text: #0A1226FF; /** Staff bar button text on hover fill. */
+  --pgn-color-sqa-iris-1: #9F8BFFFF; /** Iridescent line, first stop (violet). */
+  --pgn-color-sqa-iris-2: #C6D465FF; /** Iridescent line, middle stop (olive). */
+  --pgn-color-sqa-iris-3: #45C48AFF; /** Iridescent line, last stop (jade). */
+  --pgn-color-sqa-ring-fill: #A9BC3FFF; /** Instrument ring fill, as on the certificate seal. */
+  --pgn-color-sqa-ring-track: #E9EEFA24; /** Instrument ring track. */
+  --pgn-color-sqa-ring-glow: #A9BC3F8C; /** Ring glow (none in light mode). */
   --pgn-color-form-control-indicator-border: #C4C7CFFF;
   --pgn-course-card-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0px 4px 6px -2px rgba(255, 255, 255, 0.15), 0px 10px 15px -3px rgba(255, 255, 255, 0.15);
   --pgn-elevation-box-shadow-base: var(--pgn-elevation-box-shadow-level-2);

@@ -670,6 +670,12 @@
   --pgn-color-sqa-staffbar-text: #FFFFFFFF; /** Staff bar text. */
   --pgn-color-sqa-staffbar-btn: #FFFFFFFF; /** Staff bar outline button text and border. */
   --pgn-color-sqa-staffbar-btn-hover-text: #101A33FF; /** Staff bar button text on hover fill. */
+  --pgn-color-sqa-iris-1: #5A41C4FF; /** Iridescent line, first stop (violet). */
+  --pgn-color-sqa-iris-2: #8CA12CFF; /** Iridescent line, middle stop (olive). */
+  --pgn-color-sqa-iris-3: #1E8A55FF; /** Iridescent line, last stop (jade). */
+  --pgn-color-sqa-ring-fill: #8CA12CFF; /** Instrument ring fill, as on the certificate seal. */
+  --pgn-color-sqa-ring-track: #101A331A; /** Instrument ring track. */
+  --pgn-color-sqa-ring-glow: #8CA12C00; /** Ring glow (none in light mode). */
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;

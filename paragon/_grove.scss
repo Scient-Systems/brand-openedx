@@ -1,0 +1,342 @@
+// ===========================================================================
+// Grove accents: the certificate's visual language across the app.
+//
+// Two intensities. Inside a course (tabs, progress) it stays calm: an
+// iridescent underline, a glowing olive ring, an olive grade bar. The course
+// about page, the catalog homepage and the dashboard get the full treatment:
+// the seal rosette, the guilloche band, the halo and the iridescent hairline.
+//
+// Theme-neutral: colors come from --pgn-color-sqa-* tokens that exist in both
+// the light and dark token files, or from literal night colors on surfaces
+// that are night in both themes. Nothing here depends on the
+// [data-paragon-theme-variant] attribute.
+// Art: ../assets/sqa-rosette.svg and ../assets/sqa-guilloche-band.svg,
+// resolved next to dist/ on jsDelivr.
+// ===========================================================================
+
+$sqa-rosette: url("../assets/sqa-rosette.svg");
+$sqa-band: url("../assets/sqa-guilloche-band.svg");
+$sqa-iris-night: linear-gradient(90deg, transparent, #9F8BFF 18%, #C6D465 58%, #45C48A 84%, transparent);
+$sqa-plate:
+    radial-gradient(640px 320px at 88% 30%, rgba(159, 139, 255, 0.20), transparent 62%),
+    radial-gradient(520px 260px at 0% 110%, rgba(140, 161, 44, 0.12), transparent 60%),
+    linear-gradient(150deg, #17244C 0%, #0F1A38 48%, #0A1226 100%);
+
+@keyframes sqa-rosette-turn { to { transform: rotate(360deg); } }
+@keyframes sqa-halo-turn { to { transform: rotate(360deg); } }
+
+// ---------------------------------------------------------------------------
+// Inside a course: calm
+// ---------------------------------------------------------------------------
+
+// Active course tab: the certificate's iridescent line instead of a flat bar.
+.nav-underline-tabs .nav-link.active {
+    border-image: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2), var(--pgn-color-sqa-iris-3)) 1;
+}
+
+// Progress: the completion donut becomes the seal's glowing olive ring.
+.donut {
+    .incomplete-stroke { stroke: var(--pgn-color-sqa-ring-track); }
+    .complete-stroke {
+        stroke: var(--pgn-color-sqa-ring-fill);
+        filter: drop-shadow(0 0 5px var(--pgn-color-sqa-ring-glow));
+    }
+    .donut-chart-number { font-family: "Sora", sans-serif; font-weight: 700; fill: var(--pgn-color-text-base); color: var(--pgn-color-text-base); }
+}
+
+// Progress: the grade bar in the instrument colors.
+.grade-bar {
+    .grade-bar__base { fill: var(--pgn-color-sqa-ring-track); }
+    [class*="grade-bar--current-"] { fill: var(--pgn-color-sqa-ring-fill); }
+}
+
+// Progress: "Your certificate is available!" becomes a small night plate
+// with the seal's rosette, a preview of the certificate itself.
+[data-testid="certificate-status-component"] .card:has(#downloadable_certificate_status),
+[data-testid="certificate-status-component"] .card:has(#requesting_certificate_status) {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(190, 205, 240, 0.24);
+    border-radius: 18px;
+    background: $sqa-plate;
+    color: #F2F5FC;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; top: 0;
+        height: 2px;
+        background: $sqa-iris-night;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 260px; height: 260px;
+        right: -84px; bottom: -96px;
+        background: $sqa-rosette center / contain no-repeat;
+        opacity: 0.55;
+        z-index: -1;
+        pointer-events: none;
+    }
+    .pgn__card-header-title-md, .pgn__card-header-title-md * { color: #F2F5FC; font-family: "Sora", sans-serif; }
+    .pgn__card-section, .text-gray-700 { color: #B8C3DD !important; }
+    .pgn__card-section a { color: #BCABFF; }
+    .btn-outline-brand {
+        --pgn-btn-color: #101A33;
+        --pgn-btn-bg: #A9BC3F;
+        --pgn-btn-border-color: #A9BC3F;
+        --pgn-btn-hover-color: #101A33;
+        --pgn-btn-hover-bg: #C6D465;
+        --pgn-btn-hover-border-color: #C6D465;
+        --pgn-btn-active-color: #101A33;
+        --pgn-btn-active-bg: #C6D465;
+        --pgn-btn-active-border-color: #C6D465;
+        --pgn-btn-focus-color: #101A33;
+        --pgn-btn-focus-bg: #A9BC3F;
+        font-weight: 700;
+        border-radius: 12px;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Course about page: the full treatment
+// ---------------------------------------------------------------------------
+
+.course-about-intro > .pgn__card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(190, 205, 240, 0.22);
+    border-radius: 24px;
+    color: #F2F5FC;
+    // guilloche band along the bottom edge, like the certificate frame
+    background:
+        $sqa-band repeat-x left bottom 10px / 72px 28px,
+        $sqa-plate;
+    padding-bottom: 36px;
+    box-shadow: 0 40px 100px -50px rgba(0, 0, 0, 0.75);
+
+    // iridescent hairline across the top edge
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; top: 0;
+        height: 2px;
+        background: $sqa-iris-night;
+        z-index: 1;
+    }
+    // the seal's rosette, turning slowly behind the right side
+    &::after {
+        content: "";
+        position: absolute;
+        width: 420px; height: 420px;
+        right: -110px; top: 50%;
+        margin-top: -210px;
+        background: $sqa-rosette center / contain no-repeat;
+        opacity: 0.5;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .pgn__card-header { padding-top: 40px; }
+    .pgn__card-header-title-md,
+    .pgn__card-header-title-md * { color: #F2F5FC; }
+    .pgn__card-header-title-md {
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+        font-size: clamp(30px, 3.3vw, 46px);
+        line-height: 1.06;
+        letter-spacing: -0.025em;
+        color: #F2F5FC;
+        text-wrap: balance;
+        max-width: 22ch;
+    }
+    .pgn__card-header-subtitle-md {
+        order: -1;
+        margin: 0 0 12px;
+        font: 600 12px/1 "JetBrains Mono", monospace;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #C6D465;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        &::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    }
+    .pgn__card-header-content { display: flex; flex-direction: column; }
+    .pgn__card-section {
+        color: #C2CDE8;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 58ch;
+    }
+    // the plate is night in both themes: its footer text too
+    .pgn__card-footer { color: #E9EEFA; }
+    // "You are enrolled": the success utility, re-pointed to the night jade
+    .pgn__card-footer { --pgn-color-success-500: #5BD392; }
+    .pgn__card-footer .btn-primary {
+        --pgn-btn-color: #101A33;
+        --pgn-btn-bg: #8CA12C;
+        --pgn-btn-border-color: #8CA12C;
+        --pgn-btn-hover-color: #101A33;
+        --pgn-btn-hover-bg: #A9BC3F;
+        --pgn-btn-hover-border-color: #A9BC3F;
+        --pgn-btn-active-color: #101A33;
+        --pgn-btn-active-bg: #A9BC3F;
+        --pgn-btn-active-border-color: #A9BC3F;
+        --pgn-btn-focus-color: #101A33;
+        --pgn-btn-focus-bg: #8CA12C;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 14px 26px;
+        border-radius: 12px;
+        box-shadow: 0 16px 36px -12px rgba(140, 161, 44, 0.6);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        &:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -12px rgba(169, 188, 63, 0.7); }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .course-about-intro > .pgn__card::after { animation: sqa-rosette-turn 160s linear infinite; }
+}
+
+// the course image: a lit edge and a soft violet glow
+.course-media-wrapper .course-media-image {
+    box-shadow: 0 0 0 1px rgba(190, 205, 240, 0.28), 0 30px 70px -30px rgba(159, 139, 255, 0.55) !important;
+    border-radius: 16px !important;
+}
+
+// "About this course": an iridescent rule under the heading, olive list numbers
+.course-about-overview {
+    h2 {
+        font-family: "Sora", sans-serif;
+        letter-spacing: -0.015em;
+        &::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 2px;
+            margin-top: 12px;
+            background: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2), var(--pgn-color-sqa-iris-3));
+        }
+    }
+    ol li::marker {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+        color: var(--pgn-color-sqa-ring-fill);
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Catalog homepage banner: the full treatment
+// ---------------------------------------------------------------------------
+
+.sqa-cat-banner {
+    // the rosette, large and slow, behind the right side of the headline band
+    &::after {
+        content: "";
+        position: absolute;
+        width: 560px; height: 560px;
+        right: -120px; top: 50%;
+        margin-top: -300px;
+        background: $sqa-rosette center / contain no-repeat;
+        opacity: 0.42;
+        pointer-events: none;
+        z-index: 0;
+    }
+    > * { position: relative; z-index: 1; }
+    // iridescent threshold where the banner meets the page (the band is kept
+    // for the about plate; here it read as a jagged strip beside the panel)
+    background-image:
+        linear-gradient(90deg, transparent, #9F8BFF 18%, #C6D465 58%, #45C48A 84%, transparent),
+        radial-gradient(900px 340px at 84% -20%, rgba(159, 139, 255, 0.13), transparent 62%),
+        radial-gradient(700px 300px at 2% 120%, rgba(140, 161, 44, 0.09), transparent 60%),
+        linear-gradient(170deg, #0A1226, #060B1A);
+    background-size: 100% 1px, auto, auto, auto;
+    background-position: left bottom, 0 0, 0 0, 0 0;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .sqa-cat-banner::after { animation: sqa-rosette-turn 200s linear infinite; }
+}
+
+// course cards: an iridescent edge lights up on hover
+.sqa-cat-card {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 16px; right: 16px; top: 0;
+        height: 2px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2), var(--pgn-color-sqa-iris-3));
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        z-index: 2;
+    }
+    &:hover::before, &:focus-within::before { opacity: 1; }
+}
+
+// ---------------------------------------------------------------------------
+// Dashboard: the full treatment
+// ---------------------------------------------------------------------------
+
+#dashboard-container {
+    // greeting: iridescent hairline under it
+    .sqa-hero-title::after {
+        content: "";
+        display: block;
+        width: min(340px, 60%);
+        height: 2px;
+        margin-top: 14px;
+        background: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2) 60%, var(--pgn-color-sqa-iris-3), transparent);
+    }
+
+    // stat rings: the seal's glow, and its dial ticks around each ring
+    .sqa-ring-fill { filter: drop-shadow(0 0 4px var(--pgn-color-sqa-ring-glow)); }
+    .sqa-stat-dial::before {
+        content: "";
+        position: absolute;
+        inset: -7px;
+        border-radius: 50%;
+        background: repeating-conic-gradient(from 0deg, var(--pgn-color-sqa-ring-fill) 0deg 1.2deg, transparent 1.2deg 12deg);
+        -webkit-mask: radial-gradient(circle, transparent 0 calc(50% - 4px), #000 calc(50% - 3px) 50%, transparent calc(50% + 1px));
+        mask: radial-gradient(circle, transparent 0 calc(50% - 4px), #000 calc(50% - 3px) 50%, transparent calc(50% + 1px));
+        opacity: 0.45;
+        pointer-events: none;
+    }
+
+    // "Your plan": the seal's rosette turning behind the plan name, with a halo
+    #sqa-membership {
+        isolation: isolate;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 340px; height: 340px;
+            right: -120px; top: -110px;
+            background: $sqa-rosette center / contain no-repeat;
+            opacity: 0.4;
+            z-index: -1;
+            pointer-events: none;
+        }
+    }
+
+    // resume card: iridescent top edge
+    .sqa-resume {
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; top: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pgn-color-sqa-iris-1) 18%, var(--pgn-color-sqa-iris-2) 58%, var(--pgn-color-sqa-iris-3) 84%, transparent);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #dashboard-container #sqa-membership::after { animation: sqa-rosette-turn 180s linear infinite; }
+}

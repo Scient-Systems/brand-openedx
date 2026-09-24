@@ -4819,6 +4819,8 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   animation: sqa-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.07s both;
+  position: relative;
+  overflow: hidden;
 }
 #dashboard-container .sqa-resume:hover, #dashboard-container .sqa-resume:focus-visible {
   text-decoration: none;
@@ -4931,6 +4933,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 #dashboard-container .sqa-ring-fill {
   stroke: currentColor;
   transition: stroke-dashoffset 1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+  filter: drop-shadow(0 0 4px var(--pgn-color-sqa-ring-glow));
 }
 #dashboard-container .sqa-stat-num {
   position: absolute;
@@ -5094,6 +5097,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   border: 1px solid rgba(190, 205, 240, 0.26);
   color: #F2F5FC;
   background: radial-gradient(120% 90% at 85% -10%, rgba(159, 139, 255, 0.16), transparent 55%), linear-gradient(180deg, #1C2A56 0%, #17244C 60%, #142046 100%);
+  isolation: isolate;
 }
 #dashboard-container #sqa-membership::before {
   content: "";
@@ -5441,6 +5445,10 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   color: #E9EEFA;
   padding-block: 48px 104px;
   background: radial-gradient(900px 340px at 84% -20%, rgba(159, 139, 255, 0.13), transparent 62%), radial-gradient(700px 300px at 2% 120%, rgba(140, 161, 44, 0.09), transparent 60%), linear-gradient(170deg, #0A1226, #060B1A);
+  background-image: linear-gradient(90deg, transparent, #9F8BFF 18%, #C6D465 58%, #45C48A 84%, transparent), radial-gradient(900px 340px at 84% -20%, rgba(159, 139, 255, 0.13), transparent 62%), radial-gradient(700px 300px at 2% 120%, rgba(140, 161, 44, 0.09), transparent 60%), linear-gradient(170deg, #0A1226, #060B1A);
+  background-size: 100% 1px, auto, auto, auto;
+  background-position: left bottom, 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 }
 .sqa-cat-banner::before {
   content: "";
@@ -5657,6 +5665,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   border-radius: 16px;
   color: var(--sqa-cat-ink);
   text-decoration: none;
+  position: relative;
 }
 .sqa-cat-card:hover, .sqa-cat-card:focus-visible {
   color: var(--sqa-cat-ink);
@@ -5839,6 +5848,314 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 .course-media-wrapper .course-media-image {
   aspect-ratio: 16/9;
+  box-shadow: 0 0 0 1px rgba(190, 205, 240, 0.28), 0 30px 70px -30px rgba(159, 139, 255, 0.55) !important;
+  border-radius: 16px !important;
+}
+@keyframes sqa-rosette-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sqa-halo-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.nav-underline-tabs .nav-link.active {
+  border-image: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2), var(--pgn-color-sqa-iris-3)) 1;
+}
+.donut .incomplete-stroke {
+  stroke: var(--pgn-color-sqa-ring-track);
+}
+.donut .complete-stroke {
+  stroke: var(--pgn-color-sqa-ring-fill);
+  filter: drop-shadow(0 0 5px var(--pgn-color-sqa-ring-glow));
+}
+.donut .donut-chart-number {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  fill: var(--pgn-color-text-base);
+  color: var(--pgn-color-text-base);
+}
+.grade-bar .grade-bar__base {
+  fill: var(--pgn-color-sqa-ring-track);
+}
+.grade-bar [class*=grade-bar--current-] {
+  fill: var(--pgn-color-sqa-ring-fill);
+}
+[data-testid=certificate-status-component] .card:has(#downloadable_certificate_status),
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status) {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(190, 205, 240, 0.24);
+  border-radius: 18px;
+  background: radial-gradient(640px 320px at 88% 30%, rgba(159, 139, 255, 0.2), transparent 62%), radial-gradient(520px 260px at 0% 110%, rgba(140, 161, 44, 0.12), transparent 60%), linear-gradient(150deg, #17244C 0%, #0F1A38 48%, #0A1226 100%);
+  color: #F2F5FC;
+}
+[data-testid=certificate-status-component] .card:has(#downloadable_certificate_status)::before,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #9F8BFF 18%, #C6D465 58%, #45C48A 84%, transparent);
+}
+[data-testid=certificate-status-component] .card:has(#downloadable_certificate_status)::after,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status)::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -84px;
+  bottom: -96px;
+  background: url("../assets/sqa-rosette.svg") center/contain no-repeat;
+  opacity: 0.55;
+  z-index: -1;
+  pointer-events: none;
+}
+[data-testid=certificate-status-component] .card:has(#downloadable_certificate_status) .pgn__card-header-title-md, [data-testid=certificate-status-component] .card:has(#downloadable_certificate_status) .pgn__card-header-title-md *,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status) .pgn__card-header-title-md,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status) .pgn__card-header-title-md * {
+  color: #F2F5FC;
+  font-family: "Sora", sans-serif;
+}
+[data-testid=certificate-status-component] .card:has(#downloadable_certificate_status) .pgn__card-section, [data-testid=certificate-status-component] .card:has(#downloadable_certificate_status) .text-gray-700,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status) .pgn__card-section,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status) .text-gray-700 {
+  color: #B8C3DD !important;
+}
+[data-testid=certificate-status-component] .card:has(#downloadable_certificate_status) .pgn__card-section a,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status) .pgn__card-section a {
+  color: #BCABFF;
+}
+[data-testid=certificate-status-component] .card:has(#downloadable_certificate_status) .btn-outline-brand,
+[data-testid=certificate-status-component] .card:has(#requesting_certificate_status) .btn-outline-brand {
+  --pgn-btn-color: #101A33;
+  --pgn-btn-bg: #A9BC3F;
+  --pgn-btn-border-color: #A9BC3F;
+  --pgn-btn-hover-color: #101A33;
+  --pgn-btn-hover-bg: #C6D465;
+  --pgn-btn-hover-border-color: #C6D465;
+  --pgn-btn-active-color: #101A33;
+  --pgn-btn-active-bg: #C6D465;
+  --pgn-btn-active-border-color: #C6D465;
+  --pgn-btn-focus-color: #101A33;
+  --pgn-btn-focus-bg: #A9BC3F;
+  font-weight: 700;
+  border-radius: 12px;
+}
+.course-about-intro > .pgn__card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(190, 205, 240, 0.22);
+  border-radius: 24px;
+  color: #F2F5FC;
+  background: url("../assets/sqa-guilloche-band.svg") repeat-x left bottom 10px/72px 28px, radial-gradient(640px 320px at 88% 30%, rgba(159, 139, 255, 0.2), transparent 62%), radial-gradient(520px 260px at 0% 110%, rgba(140, 161, 44, 0.12), transparent 60%), linear-gradient(150deg, #17244C 0%, #0F1A38 48%, #0A1226 100%);
+  padding-bottom: 36px;
+  box-shadow: 0 40px 100px -50px rgba(0, 0, 0, 0.75);
+}
+.course-about-intro > .pgn__card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #9F8BFF 18%, #C6D465 58%, #45C48A 84%, transparent);
+  z-index: 1;
+}
+.course-about-intro > .pgn__card::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -110px;
+  top: 50%;
+  margin-top: -210px;
+  background: url("../assets/sqa-rosette.svg") center/contain no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+.course-about-intro > .pgn__card .pgn__card-header {
+  padding-top: 40px;
+}
+.course-about-intro > .pgn__card .pgn__card-header-title-md,
+.course-about-intro > .pgn__card .pgn__card-header-title-md * {
+  color: #F2F5FC;
+}
+.course-about-intro > .pgn__card .pgn__card-header-title-md {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 3.3vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: #F2F5FC;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+.course-about-intro > .pgn__card .pgn__card-header-subtitle-md {
+  order: -1;
+  margin: 0 0 12px;
+  font: 600 12px/1 "JetBrains Mono", monospace;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C6D465;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.course-about-intro > .pgn__card .pgn__card-header-subtitle-md::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+.course-about-intro > .pgn__card .pgn__card-header-content {
+  display: flex;
+  flex-direction: column;
+}
+.course-about-intro > .pgn__card .pgn__card-section {
+  color: #C2CDE8;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 58ch;
+}
+.course-about-intro > .pgn__card .pgn__card-footer {
+  color: #E9EEFA;
+  --pgn-color-success-500: #5BD392;
+}
+.course-about-intro > .pgn__card .pgn__card-footer .btn-primary, .course-about-intro > .pgn__card .pgn__card-footer [data-paragon-theme-variant=dark] .modal button, [data-paragon-theme-variant=dark] .modal .course-about-intro > .pgn__card .pgn__card-footer button {
+  --pgn-btn-color: #101A33;
+  --pgn-btn-bg: #8CA12C;
+  --pgn-btn-border-color: #8CA12C;
+  --pgn-btn-hover-color: #101A33;
+  --pgn-btn-hover-bg: #A9BC3F;
+  --pgn-btn-hover-border-color: #A9BC3F;
+  --pgn-btn-active-color: #101A33;
+  --pgn-btn-active-bg: #A9BC3F;
+  --pgn-btn-active-border-color: #A9BC3F;
+  --pgn-btn-focus-color: #101A33;
+  --pgn-btn-focus-bg: #8CA12C;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 26px;
+  border-radius: 12px;
+  box-shadow: 0 16px 36px -12px rgba(140, 161, 44, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.course-about-intro > .pgn__card .pgn__card-footer .btn-primary:hover, .course-about-intro > .pgn__card .pgn__card-footer [data-paragon-theme-variant=dark] .modal button:hover, [data-paragon-theme-variant=dark] .modal .course-about-intro > .pgn__card .pgn__card-footer button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -12px rgba(169, 188, 63, 0.7);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .course-about-intro > .pgn__card::after {
+    animation: sqa-rosette-turn 160s linear infinite;
+  }
+}
+.course-about-overview h2 {
+  font-family: "Sora", sans-serif;
+  letter-spacing: -0.015em;
+}
+.course-about-overview h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  margin-top: 12px;
+  background: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2), var(--pgn-color-sqa-iris-3));
+}
+.course-about-overview ol li::marker {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  color: var(--pgn-color-sqa-ring-fill);
+}
+.sqa-cat-banner::after {
+  content: "";
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  right: -120px;
+  top: 50%;
+  margin-top: -300px;
+  background: url("../assets/sqa-rosette.svg") center/contain no-repeat;
+  opacity: 0.42;
+  pointer-events: none;
+  z-index: 0;
+}
+.sqa-cat-banner > * {
+  position: relative;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sqa-cat-banner::after {
+    animation: sqa-rosette-turn 200s linear infinite;
+  }
+}
+.sqa-cat-card::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2), var(--pgn-color-sqa-iris-3));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+.sqa-cat-card:hover::before, .sqa-cat-card:focus-within::before {
+  opacity: 1;
+}
+#dashboard-container .sqa-hero-title::after {
+  content: "";
+  display: block;
+  width: min(340px, 60%);
+  height: 2px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, var(--pgn-color-sqa-iris-1), var(--pgn-color-sqa-iris-2) 60%, var(--pgn-color-sqa-iris-3), transparent);
+}
+#dashboard-container .sqa-stat-dial::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, var(--pgn-color-sqa-ring-fill) 0deg 1.2deg, transparent 1.2deg 12deg);
+  -webkit-mask: radial-gradient(circle, transparent 0 calc(50% - 4px), #000 calc(50% - 3px) 50%, transparent calc(50% + 1px));
+  mask: radial-gradient(circle, transparent 0 calc(50% - 4px), #000 calc(50% - 3px) 50%, transparent calc(50% + 1px));
+  opacity: 0.45;
+  pointer-events: none;
+}
+#dashboard-container #sqa-membership::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  right: -120px;
+  top: -110px;
+  background: url("../assets/sqa-rosette.svg") center/contain no-repeat;
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+}
+#dashboard-container .sqa-resume::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pgn-color-sqa-iris-1) 18%, var(--pgn-color-sqa-iris-2) 58%, var(--pgn-color-sqa-iris-3) 84%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  #dashboard-container #sqa-membership::after {
+    animation: sqa-rosette-turn 180s linear infinite;
+  }
 }
 .text-primary-500 {
   --pgn-color-primary-500: var(--pgn-color-sqa-text-primary-500);

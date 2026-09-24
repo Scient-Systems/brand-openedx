@@ -670,6 +670,12 @@
   --pgn-color-sqa-staffbar-text: #FFFFFFFF;
   --pgn-color-sqa-staffbar-btn: #FFFFFFFF;
   --pgn-color-sqa-staffbar-btn-hover-text: #101A33FF;
+  --pgn-color-sqa-iris-1: #5A41C4FF;
+  --pgn-color-sqa-iris-2: #8CA12CFF;
+  --pgn-color-sqa-iris-3: #1E8A55FF;
+  --pgn-color-sqa-ring-fill: #8CA12CFF;
+  --pgn-color-sqa-ring-track: #101A331A;
+  --pgn-color-sqa-ring-glow: #8CA12C00;
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;

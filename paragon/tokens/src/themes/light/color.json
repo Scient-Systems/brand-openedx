@@ -107,6 +107,30 @@
       "staffbar-btn-hover-text": {
         "$value": "#101A33",
         "$description": "Staff bar button text on hover fill."
+      },
+      "iris-1": {
+        "$value": "#5A41C4",
+        "$description": "Iridescent line, first stop (violet)."
+      },
+      "iris-2": {
+        "$value": "#8CA12C",
+        "$description": "Iridescent line, middle stop (olive)."
+      },
+      "iris-3": {
+        "$value": "#1E8A55",
+        "$description": "Iridescent line, last stop (jade)."
+      },
+      "ring-fill": {
+        "$value": "#8CA12C",
+        "$description": "Instrument ring fill, as on the certificate seal."
+      },
+      "ring-track": {
+        "$value": "rgba(16, 26, 51, 0.10)",
+        "$description": "Instrument ring track."
+      },
+      "ring-glow": {
+        "$value": "rgba(140, 161, 44, 0)",
+        "$description": "Ring glow (none in light mode)."
       }
     }
   },
