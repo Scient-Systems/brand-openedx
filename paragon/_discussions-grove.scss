@@ -1,0 +1,250 @@
+// ============================================================================
+// Discussions MFE: the same surfaces and type as the rest of the site.
+//
+// What was wrong: a solid green "Answer" bar with salmon text in dark mode,
+// mustard staff names on white in light mode, an olive-tinted pane behind the
+// thread, flat navy cards in dark, 14px dim body text, a boxy tab switcher.
+//
+// Everything here reads sqa tokens, so it serves both themes. Scoped to the
+// discussions layout (the action bar and the list/thread row after it).
+// Imported ONLY by _overrides.scss, after the legacy _discussion.scss.
+// ============================================================================
+
+$d-row: "#root .header-action-bar + .d-flex.flex-row.position-relative";
+
+// ---- action bar: tab switcher, search, Add a post ---------------------------
+#root .header-action-bar {
+    background: transparent !important;
+
+    .navbar .nav-button-group {
+        border: 1px solid var(--pgn-color-sqa-card-border);
+        border-radius: 12px;
+        background-color: var(--pgn-color-sqa-surface-card);
+        box-shadow: $sqa-card-shadow;
+
+        .nav-item .nav-link {
+            border-left-color: var(--pgn-color-sqa-card-border) !important;
+            padding: 9px 18px;
+
+            &:hover:not(.active) {
+                background: var(--pgn-color-sqa-surface-inset) !important;
+            }
+        }
+    }
+
+    .pgn__searchfield {
+        border: 1px solid var(--pgn-color-sqa-card-border);
+        border-radius: 12px;
+        background: var(--pgn-color-sqa-surface-card);
+
+        form .form-control {
+            background: var(--pgn-color-sqa-surface-card) !important;
+        }
+    }
+
+    .btn.btn-brand {
+        border-radius: 12px;
+    }
+}
+
+#{$d-row} {
+    // no tinted pane behind the thread: the page shows through
+    .bg-light-400 {
+        background: transparent !important;
+    }
+
+    // the sidebar column itself is just a column: the list inside is the card
+    // (it drew a full-height outline in light mode)
+    > .position-sticky {
+        border: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    // ---- topics list (left, Topics tab) ----------------------------------------
+    > .position-sticky .list-group.list-group-flush {
+        flex: 0 0 auto !important;
+        @include sqa-card-surface;
+        overflow: hidden;
+
+        .discussion-topic-group,
+        .list-group-item,
+        [class*="border-bottom"] {
+            border-color: var(--pgn-color-sqa-card-border) !important;
+        }
+
+        // chapter headings over their topics
+        .discussion-topic-group > .font-weight-bold {
+            color: var(--pgn-color-text-base);
+            font-family: "Sora", sans-serif;
+        }
+
+        .topic-name {
+            color: var(--pgn-color-text-primary);
+        }
+
+        a:hover > div,
+        .list-group-item-action:hover {
+            background: var(--pgn-color-sqa-surface-inset) !important;
+        }
+    }
+
+    // ---- post list (left) ------------------------------------------------------
+    .filter-bar {
+        background-color: var(--pgn-color-sqa-surface-card) !important;
+        border: 1px solid var(--pgn-color-sqa-card-border) !important;
+        border-radius: $sqa-card-radius $sqa-card-radius 0 0;
+    }
+
+    .discussion-posts {
+        border: 1px solid var(--pgn-color-sqa-card-border);
+        border-top: 0;
+        border-radius: 0 0 $sqa-card-radius $sqa-card-radius;
+        overflow: hidden;
+        background-color: var(--pgn-color-sqa-surface-card);
+        box-shadow: $sqa-card-shadow;
+        // the list card wraps its posts instead of stretching to the column's
+        // full height (a tall, mostly empty card)
+        height: auto !important;
+
+        .border-light-400 {
+            border-color: var(--pgn-color-sqa-card-border) !important;
+        }
+    }
+
+    a.discussion-post {
+        background: var(--pgn-color-sqa-surface-card) !important;
+        border-bottom: 1px solid var(--pgn-color-sqa-card-border);
+
+        &:hover > div {
+            background: var(--pgn-color-sqa-surface-inset) !important;
+        }
+
+        // selected post: recessed row with an olive marker on the left
+        .border-primary-500.bg-light-300 {
+            background: var(--pgn-color-sqa-surface-inset) !important;
+            border-right: 0 !important;
+            box-shadow: inset 3px 0 0 var(--pgn-color-sqa-ring-fill);
+        }
+
+        .text-primary-500 {
+            color: var(--pgn-color-text-base) !important;
+            font-weight: 600;
+        }
+    }
+
+    // ---- thread (right) --------------------------------------------------------
+    // the post and every response: the site's card
+    .discussion-comments.card,
+    .card.on-focus,
+    .mx-4 > .bg-white.rounded {
+        @include sqa-card-surface(true);
+    }
+
+    .discussion-comments.card {
+        h5 {
+            font-family: "Sora", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: var(--pgn-color-text-base);
+        }
+    }
+
+    // body text: 16px, a readable measure, softer than names and titles
+    .discussion-comments.card,
+    .card.on-focus {
+        p,
+        li {
+            font-size: 16px;
+            line-height: 1.65;
+            max-width: 72ch;
+            color: var(--pgn-color-text-primary);
+        }
+    }
+
+    .author-name {
+        color: var(--pgn-color-text-base);
+        font-weight: 600;
+    }
+
+    // staff and moderator names: violet, not mustard (1.9:1 on white)
+    .text-staff-color,
+    .text-staff-color .author-name,
+    .text-staff-color span {
+        color: var(--pgn-color-sqa-staff-ink) !important;
+    }
+
+    .outline-staff,
+    .outline-staff-color,
+    .outline-TA {
+        outline-color: var(--pgn-color-sqa-staff-ink) !important;
+    }
+
+    .post-summary-timestamp,
+    .comment-line {
+        color: var(--pgn-color-text-primary) !important;
+    }
+
+    // endorsed answer: a jade-tinted strip and a jade edge, instead of a
+    // solid green bar (salmon text on green in dark mode)
+    .alert-content.bg-success-500 {
+        background-color: var(--pgn-color-sqa-answer-bg) !important;
+        border-bottom: 1px solid var(--pgn-color-sqa-card-border);
+
+        &,
+        strong,
+        .pgn__icon,
+        span {
+            color: var(--pgn-color-sqa-answer-ink) !important;
+        }
+
+        strong {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+    }
+
+    .card:has(> .alert-content.bg-success-500),
+    .card:has(.alert-content.bg-success-500) {
+        border-color: var(--pgn-color-sqa-answer-ink) !important;
+        overflow: hidden;
+    }
+
+    // "Add a response"
+    button.card {
+        @include sqa-card-surface(true);
+        color: var(--pgn-color-text-base) !important;
+
+        &:hover {
+            background-color: var(--pgn-color-sqa-surface-inset) !important;
+        }
+    }
+
+    // sort menu
+    .comments-sort button.btn.btn-tertiary {
+        border: 1px solid var(--pgn-color-sqa-card-border) !important;
+        border-radius: 10px;
+        color: var(--pgn-color-text-base) !important;
+    }
+}
+
+// The course header is night chrome in both themes; its Help link used
+// text-gray-700 (grey on navy in light mode).
+#root header.learning-header a.text-gray-700 {
+    color: #C2CDE8 !important;
+
+    &:hover,
+    &:focus {
+        color: #FFFFFF !important;
+    }
+}
+
+// The discussions app paints its course-tab bar white, a white band over the
+// frost page in light mode. The other course pages leave it on the page color.
+#root .course-tabs-navigation.bg-white {
+    background: transparent !important;
+}

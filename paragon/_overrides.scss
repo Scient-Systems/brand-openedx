@@ -543,6 +543,7 @@ body {
 @import "./surfaces";  // One card look. NOT in _dark.scss -- theme-neutral via sqa tokens.
 @import "./phone";     // Phone-width fixes. NOT in _dark.scss -- theme-neutral.
 @import "./notifications"; // Bell tray. NOT in _dark.scss -- theme-neutral via tokens.
+@import "./discussions-grove"; // Discussions MFE. NOT in _dark.scss -- theme-neutral via tokens.
 
 
 // ---------------------------------------------------------------------------

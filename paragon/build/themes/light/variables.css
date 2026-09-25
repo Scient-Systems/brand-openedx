@@ -681,6 +681,9 @@
   --pgn-color-sqa-card-border: #101A3324; /** Card hairline; white on frost is only 1.11:1, so the edge carries the card. */
   --pgn-color-sqa-card-shadow: #101A3329; /** Card drop shadow color. */
   --pgn-color-sqa-card-edge: #FFFFFF00; /** No lit edge on day surfaces. */
+  --pgn-color-sqa-answer-bg: #E2F6ECFF; /** Endorsed-answer strip: jade tint. */
+  --pgn-color-sqa-answer-ink: #156B39FF; /** Endorsed-answer label and edge (deep jade, AA on the tint). */
+  --pgn-color-sqa-staff-ink: #5A41C4FF; /** Staff / moderator names in discussions (viola, AA on white). */
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;

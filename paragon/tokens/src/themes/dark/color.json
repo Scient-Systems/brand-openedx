@@ -377,6 +377,18 @@
       "card-edge": {
         "$value": "rgba(233, 238, 250, 0.08)",
         "$description": "Lit top edge inside a card (light source top-left)."
+      },
+      "answer-bg": {
+        "$value": "rgba(69, 196, 138, 0.14)",
+        "$description": "Endorsed-answer strip: jade tint on the card."
+      },
+      "answer-ink": {
+        "$value": "#5BD392",
+        "$description": "Endorsed-answer label and edge (jade, night-lifted)."
+      },
+      "staff-ink": {
+        "$value": "#BCABFF",
+        "$description": "Staff / moderator names in discussions (viola)."
       }
     },
     "card": {

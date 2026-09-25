@@ -681,6 +681,9 @@
   --pgn-color-sqa-card-border: #101A3324;
   --pgn-color-sqa-card-shadow: #101A3329;
   --pgn-color-sqa-card-edge: #FFFFFF00;
+  --pgn-color-sqa-answer-bg: #E2F6ECFF;
+  --pgn-color-sqa-answer-ink: #156B39FF;
+  --pgn-color-sqa-staff-ink: #5A41C4FF;
   --pgn-border-color-nav-tabs-link-border-hover-top: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-right: transparent;
   --pgn-border-color-nav-tabs-link-border-hover-left: transparent;

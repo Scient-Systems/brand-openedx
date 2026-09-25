@@ -151,6 +151,18 @@
       "card-edge": {
         "$value": "rgba(255, 255, 255, 0)",
         "$description": "No lit edge on day surfaces."
+      },
+      "answer-bg": {
+        "$value": "#E2F6EC",
+        "$description": "Endorsed-answer strip: jade tint."
+      },
+      "answer-ink": {
+        "$value": "#156B39",
+        "$description": "Endorsed-answer label and edge (deep jade, AA on the tint)."
+      },
+      "staff-ink": {
+        "$value": "#5A41C4",
+        "$description": "Staff / moderator names in discussions (viola, AA on white)."
       }
     },
     "card": {
