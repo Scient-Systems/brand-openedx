@@ -1,0 +1,47 @@
+// ============================================================================
+// Notification tray (the bell panel, frontend-plugin-notifications).
+//
+// The tray colors its bold text (names, post titles) and end-of-list title
+// with --pgn-color-primary-500, several with !important. In dark mode that
+// token is surface navy (#3D5586), so names and titles sat at ~1.6:1 on the
+// panel. Re-point the token inside the tray instead of out-!important-ing the
+// MFE's rules. Imported ONLY by _overrides.scss (theme-neutral via tokens).
+// ============================================================================
+
+#notificationTray {
+    // bold runs and titles: full-strength text in both themes
+    --pgn-color-primary-500: var(--pgn-color-sqa-text-primary-800);
+
+    // one surface for header, tabs and list (the header and tabs were the
+    // page color on top of a lighter list)
+    background-color: var(--pgn-color-sqa-surface-card) !important;
+    border-left: 1px solid var(--pgn-color-sqa-card-border) !important;
+    box-shadow: -24px 0 60px -30px var(--pgn-color-sqa-card-shadow);
+
+    .popover-header,
+    nav.tabs {
+        background-color: var(--pgn-color-sqa-surface-card) !important;
+    }
+
+    nav.tabs {
+        border-bottom: 1px solid var(--pgn-color-sqa-card-border);
+    }
+
+    // sentence text a step softer than the bold name and title, so the
+    // name and title stand out
+    .notification-item-content,
+    .notification-item-content p {
+        color: var(--pgn-color-text-primary);
+    }
+
+    // course name, time and the dot between them
+    .text-light-700 {
+        color: var(--pgn-color-text-primary) !important;
+    }
+
+    // unread marker: bg-brand-500 has no value in dark mode, so unread and
+    // read looked the same
+    .unread {
+        background-color: var(--pgn-color-brand-base) !important;
+    }
+}

@@ -6317,6 +6317,29 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
     margin: 0 !important;
   }
 }
+#notificationTray {
+  --pgn-color-primary-500: var(--pgn-color-sqa-text-primary-800);
+  background-color: var(--pgn-color-sqa-surface-card) !important;
+  border-left: 1px solid var(--pgn-color-sqa-card-border) !important;
+  box-shadow: -24px 0 60px -30px var(--pgn-color-sqa-card-shadow);
+}
+#notificationTray .popover-header,
+#notificationTray nav.tabs {
+  background-color: var(--pgn-color-sqa-surface-card) !important;
+}
+#notificationTray nav.tabs {
+  border-bottom: 1px solid var(--pgn-color-sqa-card-border);
+}
+#notificationTray .notification-item-content,
+#notificationTray .notification-item-content p {
+  color: var(--pgn-color-text-primary);
+}
+#notificationTray .text-light-700 {
+  color: var(--pgn-color-text-primary) !important;
+}
+#notificationTray .unread {
+  background-color: var(--pgn-color-brand-base) !important;
+}
 .text-primary-500 {
   --pgn-color-primary-500: var(--pgn-color-sqa-text-primary-500);
 }
