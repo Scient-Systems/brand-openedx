@@ -540,6 +540,7 @@ body {
 @import "./dashboard";
 @import "./catalog";   // Verawood Catalog MFE. NOT in _dark.scss -- self-manages dark, like dashboard.
 @import "./grove";     // Certificate visual language. NOT in _dark.scss -- theme-neutral via sqa tokens.
+@import "./course-exit"; // Learning course-end page. NOT in _dark.scss -- theme-neutral via sqa tokens.
 @import "./surfaces";  // One card look. NOT in _dark.scss -- theme-neutral via sqa tokens.
 @import "./phone";     // Phone-width fixes. NOT in _dark.scss -- theme-neutral.
 @import "./notifications"; // Bell tray. NOT in _dark.scss -- theme-neutral via tokens.

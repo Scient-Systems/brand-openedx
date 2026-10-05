@@ -72,18 +72,20 @@
     }
     .alert.alert-success {
         box-shadow: none;
-        a {
-            background: var(--pgn-color-primary-base);
+        // Only the alert's buttons. Plain links in the message ("Dashboard",
+        // "Profile") stay links; boxing them made them dark blocks in dark mode.
+        // Olive CTA in both themes: the old primary fill matched the outline
+        // button's text colour in light mode and hid the label.
+        a.btn {
+            background: var(--pgn-color-sqa-ring-fill);
+            color: #101A33;
             padding: 9px 17px;
             font-size: 16px;
             line-height: 24px;
             border-radius: 6px;
             border: none;
-            &.inline-link {
-                background: none;
-                padding: 0;
-                font-size: inherit;
-                line-height: inherit;
+            &:hover, &:focus {
+                color: #101A33;
             }
         }
     }
