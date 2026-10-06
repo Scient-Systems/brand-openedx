@@ -1,0 +1,35 @@
+{
+  "name": "scient",
+  "about": "Scient Corporate Training. The navy and grey base is shared with Stem Quest Academy; only the three accent families change, to the blues of the Scient logo (deep #0153CA, mid #01A1FA, cyan #02CFFC). The light-mode accent is a shade deeper than the logo mid-blue so it reads at 3:1 as a graphic on white.",
+  "colors": {
+    "#8CA12C": "#0092E6",
+    "#A9BC3F": "#1CC4FD",
+    "#C6D465": "#7DDCFF",
+    "#B7CB4A": "#4DD0FE",
+    "#66771D": "#0153CA",
+    "#596818": "#0A47A8",
+
+    "#9F8BFF": "#7C9BFF",
+    "#BCABFF": "#A9BEFF",
+    "#B5A5FF": "#A0B9FF",
+    "#5A41C4": "#2B4FD8",
+
+    "#45C48A": "#22D3EE",
+    "#5BD392": "#5EE0F5",
+    "#1E8A55": "#0E7490",
+    "#156B39": "#0E6680",
+    "#E2F6EC": "#E0F5FA",
+
+    "#F2F4EA": "#F1F4F9",
+    "#F6F7F1": "#F6F8FB",
+    "#F5F6EE": "#F3F6FA",
+    "#ECEFDA": "#E7ECF4",
+    "#E1E4D1": "#DCE3EE"
+  },
+  "groups": {
+    "primary accent (was olive): buttons, rings, active marks": ["#8CA12C", "#A9BC3F", "#C6D465", "#B7CB4A", "#66771D", "#596818"],
+    "second accent (was violet): links on night surfaces, focus rings": ["#9F8BFF", "#BCABFF", "#B5A5FF", "#5A41C4"],
+    "third accent (was green): third hue of the gradient line, answered marks": ["#45C48A", "#5BD392", "#1E8A55", "#156B39", "#E2F6EC"],
+    "light-mode page and inset backgrounds (were olive-tinted off-whites, now cool)": ["#F2F4EA", "#F6F7F1", "#F5F6EE", "#ECEFDA", "#E1E4D1"]
+  }
+}

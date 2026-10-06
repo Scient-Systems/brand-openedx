@@ -85,3 +85,18 @@ documentation in Paragon is coming soon. In the meantime, you can start
 a theme by the contents of [\_variables.scss (after line
 7)](https://github.com/openedx/paragon/blob/master/scss/core/_variables.scss#L7-L1046)
 file from the Paragon repository into this file.
+
+## More than one site (palettes)
+
+`dist/` is the Stem Quest Academy stylesheet. A site with its own brand gets a
+second set derived from it at build time:
+
+- `palettes/<name>.json` maps the accent colours to that brand's colours.
+- `make build` runs `tools/build-palette.mjs <name>`, which writes `dist-<name>/`
+  and recoloured art in `assets/<name>/`. `dist/` is never written to, so every
+  set shares one layout.
+- `assets/<name>/` also holds that site's logos (`logo-white.png` for the night
+  header and footer, `logo.png` for light surfaces, `mark.png`).
+- A site selects it with tutor-indigo's `INDIGO_BRAND_PROFILE=<name>`.
+
+Today: `scient` (Scient Corporate Training, the training-demo site).
