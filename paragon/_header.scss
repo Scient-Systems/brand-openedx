@@ -751,4 +751,14 @@
         --pgn-color-action-default-primary-500: #FFFFFF;
         color: #E9EEFA;
     }
+
+    // The 48px logo at the top of this file sat in the stock 28px logo box
+    // (nudged down 0.1em), so it hung below the bar. Let the box fit the
+    // image; the bar grows to 64px, same as the site header.
+    .logo {
+        display: flex;
+        align-items: center;
+        height: auto;
+        top: 0;
+    }
 }

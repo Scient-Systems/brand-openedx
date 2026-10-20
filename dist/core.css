@@ -2192,6 +2192,12 @@ body {
   --pgn-color-action-default-primary-500: #FFFFFF;
   color: #E9EEFA;
 }
+#root header.learning-header .logo {
+  display: flex;
+  align-items: center;
+  height: auto;
+  top: 0;
+}
 .wrapper-footer {
   padding: 25px 0;
   border-top: none;
@@ -7699,6 +7705,12 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   --pgn-color-sqa-text-primary-500: #E9EEFA;
   --pgn-color-action-default-primary-500: #FFFFFF;
   color: #E9EEFA;
+}
+[data-paragon-theme-variant=dark] #root header.learning-header .logo {
+  display: flex;
+  align-items: center;
+  height: auto;
+  top: 0;
 }
 [data-paragon-theme-variant=dark] .wrapper-footer {
   padding: 25px 0;
