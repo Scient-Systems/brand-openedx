@@ -418,6 +418,38 @@ body {
             background-color: var(--pgn-color-bg-light-overlay, rgba(255, 255, 255, 0.06));
             color: var(--pgn-color-text-base);
         }
+
+        // First unit: there is nowhere to go back to. Look it, and don't
+        // react to hover like a live button.
+        &:disabled,
+        &.disabled,
+        &:disabled:hover,
+        &:disabled:focus {
+            background-color: transparent;
+            border-color: var(--pgn-color-text-primary);
+            color: var(--pgn-color-text-primary);
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+    }
+
+    // Labels wrap onto a second line on narrow buttons ("Complete the
+    // course"); center them instead of leaving them flush left.
+    button, a {
+        text-align: center;
+    }
+}
+
+// From tablet up, size the two buttons to their labels so a long one like
+// "Complete the course" stays on one line. Phones keep the even split.
+@media (min-width: 576px) {
+    #root .sequence-container .sequence .unit-navigation {
+        max-width: 480px;
+
+        button, a {
+            flex: 1 1 auto;
+            white-space: nowrap;
+        }
     }
 }
 #root .unit-container {

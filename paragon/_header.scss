@@ -761,4 +761,58 @@
         height: auto;
         top: 0;
     }
+
+    // The learning MFE's own CSS sets `#root header .logo img { height: 100% }`,
+    // which beats the 48px above. With the box now auto-height that meant the
+    // image's raw 77px in light mode (dark mode's copy of the 48px rule wins
+    // there). Same 48px as the site header, both themes. Desktop only: the
+    // phone size lives in _phone.scss, and _dark.scss re-wraps this file.
+    @media (min-width: 768px) {
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+    }
+
+    // "Exit course" (tutor-indigo SqaExitCourse.jsx, learning_help_slot): a
+    // quiet pill on the night bar, like the account button next to it.
+    .sqa-exit-course {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-right: 12px;
+        padding: 6px 14px;
+        border-radius: 50rem;
+        background: rgba(255, 255, 255, 0.1);
+        color: #E9EEFA;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        white-space: nowrap;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            background: rgba(255, 255, 255, 0.18);
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+
+    // Phone: the course title needs the room, so the arrow carries it alone.
+    @media (max-width: 767.98px) {
+        .sqa-exit-course {
+            margin-right: 8px;
+            padding: 8px 10px;
+
+            span {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip: rect(0 0 0 0);
+                white-space: nowrap;
+            }
+        }
+    }
 }

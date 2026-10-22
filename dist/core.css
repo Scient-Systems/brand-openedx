@@ -1320,6 +1320,25 @@ body {
   background-color: var(--pgn-color-bg-light-overlay, rgba(255, 255, 255, 0.06));
   color: var(--pgn-color-text-base);
 }
+.unit-navigation .previous-button.btn-outline-secondary:disabled, .unit-navigation .previous-button.btn-outline-secondary.disabled, .unit-navigation .previous-button.btn-outline-secondary:disabled:hover, .unit-navigation .previous-button.btn-outline-secondary:disabled:focus {
+  background-color: transparent;
+  border-color: var(--pgn-color-text-primary);
+  color: var(--pgn-color-text-primary);
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.unit-navigation button, .unit-navigation a {
+  text-align: center;
+}
+@media (min-width: 576px) {
+  #root .sequence-container .sequence .unit-navigation {
+    max-width: 480px;
+  }
+  #root .sequence-container .sequence .unit-navigation button, #root .sequence-container .sequence .unit-navigation a {
+    flex: 1 1 auto;
+    white-space: nowrap;
+  }
+}
 #root .unit-container {
   max-width: 100% !important;
 }
@@ -2197,6 +2216,46 @@ body {
   align-items: center;
   height: auto;
   top: 0;
+}
+@media (min-width: 768px) {
+  #root header.learning-header .logo img {
+    height: 48px;
+    width: auto;
+  }
+}
+#root header.learning-header .sqa-exit-course {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 12px;
+  padding: 6px 14px;
+  border-radius: 50rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #E9EEFA;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+#root header.learning-header .sqa-exit-course:hover, #root header.learning-header .sqa-exit-course:focus {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+@media (max-width: 767.98px) {
+  #root header.learning-header .sqa-exit-course {
+    margin-right: 8px;
+    padding: 8px 10px;
+  }
+  #root header.learning-header .sqa-exit-course span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
 .wrapper-footer {
   padding: 25px 0;
@@ -3084,6 +3143,9 @@ footer.footer {
 }
 #root .grades .pgn__data-table.is-striped tr:nth-child(even) {
   background: none !important;
+}
+#root .grades .pgn__data-table-layout-wrapper {
+  overflow-x: auto;
 }
 #root .grades .pgn__data-table-wrapper {
   background-color: var(--pgn-color-sqa-surface-card) !important;
@@ -7712,6 +7774,46 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   height: auto;
   top: 0;
 }
+@media (min-width: 768px) {
+  [data-paragon-theme-variant=dark] #root header.learning-header .logo img {
+    height: 48px;
+    width: auto;
+  }
+}
+[data-paragon-theme-variant=dark] #root header.learning-header .sqa-exit-course {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 12px;
+  padding: 6px 14px;
+  border-radius: 50rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #E9EEFA;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+[data-paragon-theme-variant=dark] #root header.learning-header .sqa-exit-course:hover, [data-paragon-theme-variant=dark] #root header.learning-header .sqa-exit-course:focus {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+@media (max-width: 767.98px) {
+  [data-paragon-theme-variant=dark] #root header.learning-header .sqa-exit-course {
+    margin-right: 8px;
+    padding: 8px 10px;
+  }
+  [data-paragon-theme-variant=dark] #root header.learning-header .sqa-exit-course span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
 [data-paragon-theme-variant=dark] .wrapper-footer {
   padding: 25px 0;
   border-top: none;
@@ -8614,6 +8716,9 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
 }
 [data-paragon-theme-variant=dark] #root .grades .pgn__data-table.is-striped tr:nth-child(even) {
   background: none !important;
+}
+[data-paragon-theme-variant=dark] #root .grades .pgn__data-table-layout-wrapper {
+  overflow-x: auto;
 }
 [data-paragon-theme-variant=dark] #root .grades .pgn__data-table-wrapper {
   background-color: var(--pgn-color-sqa-surface-card) !important;
