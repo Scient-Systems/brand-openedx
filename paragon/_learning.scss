@@ -164,6 +164,25 @@
                 margin: 0 32px 0 0;
             }
         }
+
+        // "More..." (tabs that don't fit) is the only tab that is a <button class="btn">,
+        // so it picked up our global .btn radius (12px, !important) and Paragon's button
+        // border on hover/focus/open: a rounded half-outline that read as a glitch.
+        // Make it look like the link tabs in every state; keep a plain keyboard focus.
+        .dropdown-toggle.btn,
+        .dropdown-toggle.btn:hover,
+        .dropdown-toggle.btn:focus,
+        .dropdown-toggle.btn:active,
+        .show > .dropdown-toggle.btn {
+            border-radius: 0 !important;
+            border-color: transparent;
+            background: none !important;
+            box-shadow: none !important;
+        }
+        .dropdown-toggle.btn:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
     }
 }
 div[data-learner-type=b2c_learner] {

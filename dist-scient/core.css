@@ -3495,6 +3495,20 @@ footer.footer {
     margin: 0 32px 0 0;
   }
 }
+.course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn,
+.course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:hover,
+.course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:focus,
+.course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:active,
+.course-tabs-navigation .nav.nav-underline-tabs .show > .dropdown-toggle.btn {
+  border-radius: 0 !important;
+  border-color: transparent;
+  background: none !important;
+  box-shadow: none !important;
+}
+.course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
 div[data-learner-type=b2c_learner] div[role=heading].h2 {
   font-size: 28px;
   line-height: 32px;
@@ -9075,6 +9089,20 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   [data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs a, [data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs button {
     margin: 0 32px 0 0;
   }
+}
+[data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn,
+[data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:hover,
+[data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:focus,
+[data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:active,
+[data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs .show > .dropdown-toggle.btn {
+  border-radius: 0 !important;
+  border-color: transparent;
+  background: none !important;
+  box-shadow: none !important;
+}
+[data-paragon-theme-variant=dark] .course-tabs-navigation .nav.nav-underline-tabs .dropdown-toggle.btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 [data-paragon-theme-variant=dark] div[data-learner-type=b2c_learner] div[role=heading].h2 {
   font-size: 28px;
