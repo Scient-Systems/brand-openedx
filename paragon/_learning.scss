@@ -173,15 +173,59 @@
         .dropdown-toggle.btn:hover,
         .dropdown-toggle.btn:focus,
         .dropdown-toggle.btn:active,
+        .dropdown-toggle.btn[aria-expanded="true"],
         .show > .dropdown-toggle.btn {
+            border-color: transparent !important;
             border-radius: 0 !important;
-            border-color: transparent;
             background: none !important;
             box-shadow: none !important;
+            text-shadow: none !important;
+            filter: none !important;
+            outline: none;
+        }
+        // Paragon draws its focus ring on ::before (our dark theme colours it):
+        // the boxed, glowing button seen while the menu was open.
+        .dropdown-toggle.btn::before {
+            display: none !important;
         }
         .dropdown-toggle.btn:focus-visible {
             outline: 2px solid currentColor;
             outline-offset: 2px;
+        }
+
+        // The menu of tabs that didn't fit. The tab rule above (a, button: margins,
+        // 2px borders) also hit its items, and the menu kept Paragon's light colours
+        // in dark mode. Make it a card with plain rows, in both themes.
+        .dropdown-menu {
+            @include sqa-card-surface(true);
+            border-radius: 12px !important;
+            padding: 6px 0;
+            min-width: 220px;
+
+            a, button, .dropdown-item {
+                display: block;
+                width: 100%;
+                margin: 0 !important;
+                padding: 9px 16px;
+                border: 0 !important;
+                border-radius: 0 !important;
+                background: none !important;
+                color: var(--pgn-color-text-primary) !important;
+                text-align: left;
+                font-weight: 500;
+                white-space: nowrap;
+
+                &:hover,
+                &:focus {
+                    background: var(--pgn-color-sqa-surface-inset) !important;
+                    color: var(--pgn-color-text-base) !important;
+                    text-decoration: none;
+                }
+                &.active {
+                    color: var(--pgn-color-text-base) !important;
+                    font-weight: 600;
+                }
+            }
         }
     }
 }
