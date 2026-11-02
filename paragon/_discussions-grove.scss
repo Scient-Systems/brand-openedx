@@ -232,15 +232,11 @@ $d-row: "#root .header-action-bar + .d-flex.flex-row.position-relative";
     }
 }
 
-// The course header is night chrome in both themes; its Help link used
-// text-gray-700 (grey on navy in light mode).
+// The discussions app's course header (header v8) shows the stock "Help" link
+// (a.text-gray-700 to SUPPORT_URL) and has no slot to remove it. The other
+// course pages drop it through learning_help_slot; hide it here to match.
 #root header.learning-header a.text-gray-700 {
-    color: #C2CDE8 !important;
-
-    &:hover,
-    &:focus {
-        color: #FFFFFF !important;
-    }
+    display: none;
 }
 
 // The discussions app paints its course-tab bar white, a white band over the

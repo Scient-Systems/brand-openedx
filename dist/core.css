@@ -6914,10 +6914,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
   color: var(--pgn-color-text-base) !important;
 }
 #root header.learning-header a.text-gray-700 {
-  color: #C2CDE8 !important;
-}
-#root header.learning-header a.text-gray-700:hover, #root header.learning-header a.text-gray-700:focus {
-  color: #FFFFFF !important;
+  display: none;
 }
 #root .course-tabs-navigation.bg-white {
   background: transparent !important;
