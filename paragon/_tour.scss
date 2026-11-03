@@ -93,3 +93,25 @@
         }
     }
 }
+
+// Course home tour, step 3 ("Additional course resources"). Its target is the
+// whole tab bar (#courseTabsNavigation), which runs the full page width, so the
+// card and its arrow centred on the empty middle of the bar instead of the
+// tabs. It is the only step placed below its target: line the card up with the
+// tabs (the bar is centred and at most 1600px wide, 15px gutter) and put the
+// arrow under the first tabs. `translate` adds to the tour's own transform.
+@media (min-width: 768px) {
+    body:has(.course-outline-tab) #pgn__checkpoint[data-popper-placement^="bottom"] {
+        translate: calc(max(0px, (100vw - 1600px) / 2) + 15px - 50vw + 240px) 0;
+
+        > #pgn__checkpoint-arrow {
+            transform: translate(150px, 0) !important;
+        }
+    }
+}
+
+// The learning app gives the tour's Back button no label, so it rendered as an
+// empty pill beside "Okay".
+#pgn__checkpoint .pgn__checkpoint-button-back:empty {
+    display: none;
+}
