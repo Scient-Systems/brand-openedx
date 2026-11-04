@@ -111,7 +111,8 @@
 }
 
 // The learning app gives the tour's Back button no label, so it rendered as an
-// empty pill beside "Okay".
-#pgn__checkpoint .pgn__checkpoint-button-back:empty {
-    display: none;
+// empty pill beside "Next"/"Okay". Give it one (CSS-generated text is part of
+// the button's accessible name, so screen readers announce it too).
+#pgn__checkpoint .pgn__checkpoint-button-back:empty::before {
+    content: "\2190\00a0 Back";
 }
