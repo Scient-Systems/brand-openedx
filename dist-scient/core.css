@@ -3283,7 +3283,7 @@ footer.footer {
     transform: translate(150px, 0) !important;
   }
 }
-#pgn__checkpoint .pgn__checkpoint-button-back:empty::before {
+#pgn__checkpoint .pgn__checkpoint-button-back:empty::after {
   content: "← Back";
 }
 #courseHome-outline .pgn_collapsible {
@@ -8921,7 +8921,7 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 li .small.mb-2 {
     transform: translate(150px, 0) !important;
   }
 }
-[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-button-back:empty::before {
+[data-paragon-theme-variant=dark] #pgn__checkpoint .pgn__checkpoint-button-back:empty::after {
   content: "← Back";
 }
 [data-paragon-theme-variant=dark] #courseHome-outline .pgn_collapsible {

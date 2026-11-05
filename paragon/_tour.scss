@@ -112,7 +112,9 @@
 
 // The learning app gives the tour's Back button no label, so it rendered as an
 // empty pill beside "Next"/"Okay". Give it one (CSS-generated text is part of
-// the button's accessible name, so screen readers announce it too).
-#pgn__checkpoint .pgn__checkpoint-button-back:empty::before {
+// the button's accessible name, so screen readers announce it too). On ::after:
+// Paragon draws the focus ring on ::before, so a label there floated out of
+// the button once it was clicked (focused).
+#pgn__checkpoint .pgn__checkpoint-button-back:empty::after {
     content: "\2190\00a0 Back";
 }
